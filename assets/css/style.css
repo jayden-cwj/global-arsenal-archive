@@ -386,24 +386,29 @@ body {
 }
 
 /* Language Toggle Styles */
-body[data-lang="en"] .lang-ko-only,
+/* Default: Show English, Hide Korean (when body has no data-lang or data-lang="en") */
+.lang-ko-only {
+    display: none !important;
+}
+
+/* When Korean is selected, hide English and show Korean */
 body[data-lang="ko"] .lang-en-only {
     display: none !important;
 }
 
-body[data-lang="ko"] .card-title-ko,
-body[data-lang="ko"] .title-ko {
+body[data-lang="ko"] .lang-ko-only {
+    display: revert !important;
+}
+
+/* Make Korean titles larger when Korean is active */
+body[data-lang="ko"] .card-title-ko {
     font-size: 1.3rem;
     color: #3498db;
 }
 
 body[data-lang="ko"] .title-ko {
     font-size: 2.5rem;
-}
-
-/* Default visibility - show English, hide Korean */
-.lang-ko-only {
-    display: none;
+    color: #3498db;
 }
 
 /* Responsive Design */
