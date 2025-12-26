@@ -5,10 +5,10 @@ layout: default
     <div class="header-section">
         <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title_en }}" class="main-thumbnail">
         <div class="title-section">
-            <h1 class="title-en">{{ page.title_en }}</h1>
-            <h2 class="title-ko">{{ page.title_ko }}</h2>
-            <p class="summary-en">{{ page.summary_en }}</p>
-            <p class="summary-ko">{{ page.summary_ko }}</p>
+            <h1 class="title-en lang-en-only">{{ page.title_en }}</h1>
+            <h2 class="title-ko lang-ko-only">{{ page.title_ko }}</h2>
+            <p class="summary-en lang-en-only">{{ page.summary_en }}</p>
+            <p class="summary-ko lang-ko-only">{{ page.summary_ko }}</p>
         </div>
     </div>
 

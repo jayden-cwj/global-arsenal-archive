@@ -110,68 +110,42 @@
 
     <script>
         // Language Toggle Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const langToggle = document.getElementById('langToggle');
-            const langOptions = document.querySelectorAll('.lang-option');
+        (function() {
+            // Set initial language from localStorage or default to 'en'
+            const savedLang = localStorage.getItem('language') || 'en';
+            document.body.setAttribute('data-lang', savedLang);
 
-            // Load saved language preference
-            let currentLang = localStorage.getItem('language') || 'en';
-            setLanguage(currentLang);
+            document.addEventListener('DOMContentLoaded', function() {
+                const langToggle = document.getElementById('langToggle');
+                if (!langToggle) return; // Exit if button doesn't exist
 
-            // Toggle language on click
-            langToggle.addEventListener('click', function() {
-                currentLang = currentLang === 'en' ? 'ko' : 'en';
-                setLanguage(currentLang);
-                localStorage.setItem('language', currentLang);
-            });
+                const langOptions = document.querySelectorAll('.lang-option');
 
-            function setLanguage(lang) {
-                // Update button state
-                langOptions.forEach(option => {
-                    if (option.dataset.lang === lang) {
-                        option.classList.add('active');
-                    } else {
-                        option.classList.remove('active');
-                    }
-                });
-
-                // Toggle content visibility
-                document.body.setAttribute('data-lang', lang);
-
-                // Show/hide English content
-                const enElements = document.querySelectorAll('.card-title-en, .title-en, .summary-en, [lang="en"]');
-                enElements.forEach(el => {
-                    el.style.display = lang === 'en' ? '' : 'none';
-                });
-
-                // Show/hide Korean content
-                const koElements = document.querySelectorAll('.card-title-ko, .title-ko, .summary-ko, [lang="ko"]');
-                koElements.forEach(el => {
-                    el.style.display = lang === 'ko' ? '' : 'none';
-                });
-
-                // If Korean, make Korean titles larger
-                if (lang === 'ko') {
-                    document.querySelectorAll('.card-title-ko').forEach(el => {
-                        el.style.fontSize = '1.3rem';
-                        el.style.color = '#3498db';
-                    });
-                    document.querySelectorAll('.title-ko').forEach(el => {
-                        el.style.fontSize = '2.5rem';
-                        el.style.color = '#3498db';
-                    });
-                } else {
-                    document.querySelectorAll('.card-title-ko').forEach(el => {
-                        el.style.fontSize = '';
-                        el.style.color = '';
-                    });
-                    document.querySelectorAll('.title-ko').forEach(el => {
-                        el.style.fontSize = '';
-                        el.style.color = '';
+                // Update button state based on current language
+                function updateButtonState(lang) {
+                    langOptions.forEach(option => {
+                        if (option.dataset.lang === lang) {
+                            option.classList.add('active');
+                        } else {
+                            option.classList.remove('active');
+                        }
                     });
                 }
-            }
-        });
+
+                // Set initial button state
+                updateButtonState(savedLang);
+
+                // Toggle language on click
+                langToggle.addEventListener('click', function() {
+                    const currentLang = document.body.getAttribute('data-lang') || 'en';
+                    const newLang = currentLang === 'en' ? 'ko' : 'en';
+
+                    document.body.setAttribute('data-lang', newLang);
+                    localStorage.setItem('language', newLang);
+                    updateButtonState(newLang);
+                });
+            });
+        })();
     </script>
 </body>
 </html>

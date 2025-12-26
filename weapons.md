@@ -6,15 +6,15 @@ permalink: /weapons/
 
 <div class="dashboard container">
     <div class="dashboard-header">
-        <h1 lang="en">Weapons Arsenal</h1>
-        <h1 lang="ko" style="display:none;">무기 목록</h1>
-        <p class="subtitle" lang="en">Comprehensive archive of historical military weapons</p>
-        <p class="subtitle" lang="ko" style="display:none;">역사적 군사 무기의 종합 아카이브</p>
+        <h1 class="lang-en-only">Weapons Arsenal</h1>
+        <h1 class="lang-ko-only">무기 목록</h1>
+        <p class="subtitle lang-en-only">Comprehensive archive of historical military weapons</p>
+        <p class="subtitle lang-ko-only">역사적 군사 무기의 종합 아카이브</p>
     </div>
 
     <section class="collection-section">
-        <h2 lang="en">All Weapons</h2>
-        <h2 lang="ko" style="display:none;">모든 무기</h2>
+        <h2 class="lang-en-only">All Weapons</h2>
+        <h2 class="lang-ko-only">모든 무기</h2>
         <div class="grid-container">
             {% for weapon in site.weapons %}
             <a href="{{ weapon.url | relative_url }}" class="item-card">
@@ -29,10 +29,10 @@ permalink: /weapons/
                     {% endif %}
                 </div>
                 <div class="card-content">
-                    <h3 class="card-title-en">{{ weapon.title_en }}</h3>
-                    <p class="card-title-ko">{{ weapon.title_ko }}</p>
-                    <p class="card-summary" lang="en">{{ weapon.summary_en }}</p>
-                    <p class="card-summary" lang="ko" style="display:none;">{{ weapon.summary_ko }}</p>
+                    <h3 class="card-title-en lang-en-only">{{ weapon.title_en }}</h3>
+                    <p class="card-title-ko lang-ko-only">{{ weapon.title_ko }}</p>
+                    <p class="card-summary lang-en-only">{{ weapon.summary_en }}</p>
+                    <p class="card-summary lang-ko-only">{{ weapon.summary_ko }}</p>
                 </div>
             </a>
             {% endfor %}

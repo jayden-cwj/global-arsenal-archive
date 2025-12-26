@@ -385,6 +385,27 @@ body {
     color: #95a5a6;
 }
 
+/* Language Toggle Styles */
+body[data-lang="en"] .lang-ko-only,
+body[data-lang="ko"] .lang-en-only {
+    display: none !important;
+}
+
+body[data-lang="ko"] .card-title-ko,
+body[data-lang="ko"] .title-ko {
+    font-size: 1.3rem;
+    color: #3498db;
+}
+
+body[data-lang="ko"] .title-ko {
+    font-size: 2.5rem;
+}
+
+/* Default visibility - show English, hide Korean */
+.lang-ko-only {
+    display: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-content {

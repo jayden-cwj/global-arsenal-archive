@@ -28,16 +28,16 @@
     <main class="content">
         <div class="dashboard container">
             <div class="dashboard-header">
-                <h1 lang="en">Global Arsenal Archive</h1>
-                <h1 lang="ko" style="display:none;">글로벌 무기 아카이브</h1>
-                <p class="subtitle" lang="en">A data-driven platform archiving global military history and weapon specifications</p>
-                <p class="subtitle" lang="ko" style="display:none;">전 세계 군사 역사와 무기 사양을 아카이브하는 데이터 기반 플랫폼</p>
+                <h1 class="lang-en-only">Global Arsenal Archive</h1>
+                <h1 class="lang-ko-only">글로벌 무기 아카이브</h1>
+                <p class="subtitle lang-en-only">A data-driven platform archiving global military history and weapon specifications</p>
+                <p class="subtitle lang-ko-only">전 세계 군사 역사와 무기 사양을 아카이브하는 데이터 기반 플랫폼</p>
             </div>
 
             <!-- Weapons Section -->
             <section class="collection-section">
-                <h2 lang="en">Weapons Arsenal</h2>
-                <h2 lang="ko" style="display:none;">무기 목록</h2>
+                <h2 class="lang-en-only">Weapons Arsenal</h2>
+                <h2 class="lang-ko-only">무기 목록</h2>
                 <div class="grid-container">
                     <!-- Tiger I Card -->
                     <a href="preview-tiger-i.html" class="item-card">
@@ -52,10 +52,10 @@
                             </svg>
                         </div>
                         <div class="card-content">
-                            <h3 class="card-title-en">Tiger I (Panzer VI)</h3>
-                            <p class="card-title-ko">6호 전차 티거 I</p>
-                            <p class="card-summary" lang="en">A legendary German heavy tank of World War II.</p>
-                            <p class="card-summary" lang="ko" style="display:none;">제2차 세계대전 당시 독일의 전설적인 중전차.</p>
+                            <h3 class="card-title-en lang-en-only">Tiger I (Panzer VI)</h3>
+                            <p class="card-title-ko lang-ko-only">6호 전차 티거 I</p>
+                            <p class="card-summary lang-en-only">A legendary German heavy tank of World War II.</p>
+                            <p class="card-summary lang-ko-only">제2차 세계대전 당시 독일의 전설적인 중전차.</p>
                         </div>
                     </a>
 
@@ -72,10 +72,10 @@
                             </svg>
                         </div>
                         <div class="card-content">
-                            <h3 class="card-title-en">M4 Sherman</h3>
-                            <p class="card-title-ko">M4 셔먼</p>
-                            <p class="card-summary" lang="en">The primary American medium tank during World War II.</p>
-                            <p class="card-summary" lang="ko" style="display:none;">제2차 세계대전 시기 미국의 주력 중형전차.</p>
+                            <h3 class="card-title-en lang-en-only">M4 Sherman</h3>
+                            <p class="card-title-ko lang-ko-only">M4 셔먼</p>
+                            <p class="card-summary lang-en-only">The primary American medium tank during World War II.</p>
+                            <p class="card-summary lang-ko-only">제2차 세계대전 시기 미국의 주력 중형전차.</p>
                         </div>
                     </a>
                 </div>
@@ -83,8 +83,8 @@
 
             <!-- Wars Section -->
             <section class="collection-section">
-                <h2 lang="en">Historical Conflicts</h2>
-                <h2 lang="ko" style="display:none;">역사적 전쟁</h2>
+                <h2 class="lang-en-only">Historical Conflicts</h2>
+                <h2 class="lang-ko-only">역사적 전쟁</h2>
                 <div class="grid-container">
                     <!-- WWII Card -->
                     <a href="preview-wwii.html" class="item-card">
@@ -101,10 +101,10 @@
                             </svg>
                         </div>
                         <div class="card-content">
-                            <h3 class="card-title-en">World War II</h3>
-                            <p class="card-title-ko">제2차 세계대전</p>
-                            <p class="card-summary" lang="en">The most destructive global conflict in human history, lasting from 1939 to 1945.</p>
-                            <p class="card-summary" lang="ko" style="display:none;">1939년부터 1945년까지 인류 역사상 가장 파괴적이었던 전 지구적 규모의 전쟁.</p>
+                            <h3 class="card-title-en lang-en-only">World War II</h3>
+                            <p class="card-title-ko lang-ko-only">제2차 세계대전</p>
+                            <p class="card-summary lang-en-only">The most destructive global conflict in human history, lasting from 1939 to 1945.</p>
+                            <p class="card-summary lang-ko-only">1939년부터 1945년까지 인류 역사상 가장 파괴적이었던 전 지구적 규모의 전쟁.</p>
                         </div>
                     </a>
 
@@ -119,10 +119,10 @@
                             </svg>
                         </div>
                         <div class="card-content">
-                            <h3 class="card-title-en">Korean War</h3>
-                            <p class="card-title-ko">한국전쟁</p>
-                            <p class="card-summary" lang="en">A major conflict in the Cold War, fought on the Korean Peninsula from 1950 to 1953.</p>
-                            <p class="card-summary" lang="ko" style="display:none;">1950년부터 1953년까지 한반도에서 벌어진 냉전 시대의 첫 대규모 열전.</p>
+                            <h3 class="card-title-en lang-en-only">Korean War</h3>
+                            <p class="card-title-ko lang-ko-only">한국전쟁</p>
+                            <p class="card-summary lang-en-only">A major conflict in the Cold War, fought on the Korean Peninsula from 1950 to 1953.</p>
+                            <p class="card-summary lang-ko-only">1950년부터 1953년까지 한반도에서 벌어진 냉전 시대의 첫 대규모 열전.</p>
                         </div>
                     </a>
                 </div>
@@ -138,68 +138,42 @@
 
     <script>
         // Language Toggle Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const langToggle = document.getElementById('langToggle');
-            const langOptions = document.querySelectorAll('.lang-option');
+        (function() {
+            // Set initial language from localStorage or default to 'en'
+            const savedLang = localStorage.getItem('language') || 'en';
+            document.body.setAttribute('data-lang', savedLang);
 
-            // Load saved language preference
-            let currentLang = localStorage.getItem('language') || 'en';
-            setLanguage(currentLang);
+            document.addEventListener('DOMContentLoaded', function() {
+                const langToggle = document.getElementById('langToggle');
+                if (!langToggle) return; // Exit if button doesn't exist
 
-            // Toggle language on click
-            langToggle.addEventListener('click', function() {
-                currentLang = currentLang === 'en' ? 'ko' : 'en';
-                setLanguage(currentLang);
-                localStorage.setItem('language', currentLang);
-            });
+                const langOptions = document.querySelectorAll('.lang-option');
 
-            function setLanguage(lang) {
-                // Update button state
-                langOptions.forEach(option => {
-                    if (option.dataset.lang === lang) {
-                        option.classList.add('active');
-                    } else {
-                        option.classList.remove('active');
-                    }
-                });
-
-                // Toggle content visibility
-                document.body.setAttribute('data-lang', lang);
-
-                // Show/hide English content
-                const enElements = document.querySelectorAll('.card-title-en, .title-en, .summary-en, [lang="en"]');
-                enElements.forEach(el => {
-                    el.style.display = lang === 'en' ? '' : 'none';
-                });
-
-                // Show/hide Korean content
-                const koElements = document.querySelectorAll('.card-title-ko, .title-ko, .summary-ko, [lang="ko"]');
-                koElements.forEach(el => {
-                    el.style.display = lang === 'ko' ? '' : 'none';
-                });
-
-                // If Korean, make Korean titles larger
-                if (lang === 'ko') {
-                    document.querySelectorAll('.card-title-ko').forEach(el => {
-                        el.style.fontSize = '1.3rem';
-                        el.style.color = '#3498db';
-                    });
-                    document.querySelectorAll('.title-ko').forEach(el => {
-                        el.style.fontSize = '2.5rem';
-                        el.style.color = '#3498db';
-                    });
-                } else {
-                    document.querySelectorAll('.card-title-ko').forEach(el => {
-                        el.style.fontSize = '';
-                        el.style.color = '';
-                    });
-                    document.querySelectorAll('.title-ko').forEach(el => {
-                        el.style.fontSize = '';
-                        el.style.color = '';
+                // Update button state based on current language
+                function updateButtonState(lang) {
+                    langOptions.forEach(option => {
+                        if (option.dataset.lang === lang) {
+                            option.classList.add('active');
+                        } else {
+                            option.classList.remove('active');
+                        }
                     });
                 }
-            }
-        });
+
+                // Set initial button state
+                updateButtonState(savedLang);
+
+                // Toggle language on click
+                langToggle.addEventListener('click', function() {
+                    const currentLang = document.body.getAttribute('data-lang') || 'en';
+                    const newLang = currentLang === 'en' ? 'ko' : 'en';
+
+                    document.body.setAttribute('data-lang', newLang);
+                    localStorage.setItem('language', newLang);
+                    updateButtonState(newLang);
+                });
+            });
+        })();
     </script>
 </body>
 </html>
