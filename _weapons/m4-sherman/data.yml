@@ -2,7 +2,7 @@
 layout: weapon-template
 id: "m4-sherman"
 permalink: /weapons/m4-sherman/
-thumbnail: "index.jpg"
+thumbnail: "/assets/images/weapons/m4-sherman.jpg"
 
 # Bilingual Metadata
 title_ko: "M4 셔먼"

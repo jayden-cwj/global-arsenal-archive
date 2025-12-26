@@ -16,7 +16,7 @@ title: "Global Arsenal Archive - Dashboard"
             {% for weapon in site.weapons %}
             <a href="{{ weapon.url | relative_url }}" class="item-card">
                 <div class="card-image">
-                    <img src="{{ weapon.url | relative_url }}{{ weapon.thumbnail }}" alt="{{ weapon.title_en }}">
+                    <img src="{{ weapon.thumbnail | relative_url }}" alt="{{ weapon.title_en }}">
                 </div>
                 <div class="card-content">
                     <h3 class="card-title-en">{{ weapon.title_en }}</h3>
@@ -35,7 +35,7 @@ title: "Global Arsenal Archive - Dashboard"
             {% for war in site.wars %}
             <a href="{{ war.url | relative_url }}" class="item-card">
                 <div class="card-image">
-                    <img src="{{ war.url | relative_url }}{{ war.thumbnail }}" alt="{{ war.title_en }}">
+                    <img src="{{ war.thumbnail | relative_url }}" alt="{{ war.title_en }}">
                 </div>
                 <div class="card-content">
                     <h3 class="card-title-en">{{ war.title_en }}</h3>

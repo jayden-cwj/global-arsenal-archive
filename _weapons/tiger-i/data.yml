@@ -2,7 +2,7 @@
 layout: weapon-template
 id: "tiger-i"
 permalink: /weapons/tiger-i/
-thumbnail: "index.jpg"
+thumbnail: "/assets/images/weapons/tiger-i.jpg"
 
 # Bilingual Metadata
 title_ko: "6호 전차 티거 I"

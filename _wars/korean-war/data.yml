@@ -2,7 +2,7 @@
 layout: war-template
 id: "korean-war"
 permalink: /wars/korean-war/
-thumbnail: "index.png"
+thumbnail: "/assets/images/wars/korean-war.png"
 
 # Bilingual Metadata
 title_ko: "한국전쟁"

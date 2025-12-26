@@ -2,7 +2,7 @@
 layout: war-template
 id: "wwii"
 permalink: /wars/wwii/
-thumbnail: "index.png"
+thumbnail: "/assets/images/wars/wwii.png"
 
 # Bilingual Metadata
 title_ko: "제2차 세계대전"
