@@ -10,7 +10,6 @@ permalink: /military-history/
     <!-- Introduction -->
     <!-- Era-Based Organization -->
     <div class="historical-timeline">
-        <p>
         <!-- Era Filter -->
         <div class="era-filter-container">
             <label class="filter-label lang-en-only">Filter by Era:</label>
@@ -45,7 +44,7 @@ permalink: /military-history/
         {% for era in eras %}
             {% assign era_wars = all_wars | where: "era", era %}
             {% if era_wars.size > 0 %}
-            <div class="era-section">
+            <div class="era-section" data-era="{{ era }}">
                 <h3 class="era-title">
                     {% if era == "ancient" %}
                         <span class="lang-en-only">🏛️ Ancient Era (Before 500 CE)</span>
@@ -99,6 +98,12 @@ permalink: /military-history/
             </div>
             {% endif %}
         {% endfor %}
+
+        <!-- Empty State -->
+        <div class="empty-state" style="display: none;">
+            <p class="lang-en-only">No wars found for the selected era.</p>
+            <p class="lang-ko-only">선택한 시대에 전쟁이 없습니다.</p>
+        </div>
     </div>
 
     <!-- Quick Navigation -->
@@ -382,6 +387,22 @@ permalink: /military-history/
     margin-top: 0.5rem;
 }
 
+/* Empty State */
+.empty-state {
+    background: linear-gradient(135deg, #34495e15, #2c3e5015);
+    padding: 3rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 2px dashed #34495e;
+    margin: 2rem 0;
+}
+
+.empty-state p {
+    color: #95a5a6;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
 /* Quick Navigation */
 .quick-navigation {
     margin-top: 4rem;
@@ -476,6 +497,7 @@ permalink: /military-history/
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.era-filter-btn');
     const eraSections = document.querySelectorAll('.era-section');
+    const emptyState = document.querySelector('.empty-state');
 
     // Add click event to each filter button
     filterButtons.forEach(button => {
@@ -487,32 +509,24 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('active');
 
             // Show/hide era sections based on filter
+            let visibleCount = 0;
             eraSections.forEach(section => {
-                const sectionEra = section.querySelector('.era-title').textContent.toLowerCase();
+                const sectionEra = section.dataset.era;
 
-                if (selectedEra === 'all') {
+                if (selectedEra === 'all' || selectedEra === sectionEra) {
                     section.classList.remove('hidden');
+                    visibleCount++;
                 } else {
-                    // Match the era with the section
-                    if (selectedEra === 'ancient' && sectionEra.includes('ancient') || sectionEra.includes('고대')) {
-                        section.classList.remove('hidden');
-                    } else if (selectedEra === 'medieval' && (sectionEra.includes('medieval') || sectionEra.includes('중세'))) {
-                        section.classList.remove('hidden');
-                    } else if (selectedEra === 'modern' && (sectionEra.includes('modern') || sectionEra.includes('근대'))) {
-                        section.classList.remove('hidden');
-                    } else if (selectedEra === 'contemporary' && (sectionEra.includes('contemporary') || sectionEra.includes('현대'))) {
-                        section.classList.remove('hidden');
-                    } else if (selectedEra === 'future' && (sectionEra.includes('future') || sectionEra.includes('미래'))) {
-                        section.classList.remove('hidden');
-                    } else if (selectedEra === 'scifi' && (sectionEra.includes('science fiction') || sectionEra.includes('공상과학'))) {
-                        section.classList.remove('hidden');
-                    } else if (selectedEra === 'fantasy' && (sectionEra.includes('fantasy') || sectionEra.includes('판타지'))) {
-                        section.classList.remove('hidden');
-                    } else {
-                        section.classList.add('hidden');
-                    }
+                    section.classList.add('hidden');
                 }
             });
+
+            // Show empty state if no sections are visible
+            if (visibleCount === 0) {
+                emptyState.style.display = 'block';
+            } else {
+                emptyState.style.display = 'none';
+            }
 
             // Scroll to timeline section smoothly
             document.querySelector('.historical-timeline').scrollIntoView({
