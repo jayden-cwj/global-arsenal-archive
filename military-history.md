@@ -43,8 +43,6 @@ permalink: /military-history/
                     <span class="lang-en-only">Fantasy</span>
                     <span class="lang-ko-only">판타지</span>
                 </button>
-                <option value="scifi" data-en="Science Fiction" data-ko="공상 과학">Sci-Fi / SF</option>
-                <option value="fantasy" data-en="Fantasy" data-ko="판타지">Fantasy / 판타지</option>
             </div>
         </div>
 
