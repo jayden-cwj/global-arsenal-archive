@@ -18,7 +18,6 @@ permalink: /fortifications/
                 <option value="medieval" data-en="Medieval (500-1500)" data-ko="중세 (500-1500)">Medieval / 중세</option>
                 <option value="modern" data-en="Modern (1500-1900)" data-ko="근대 (1500-1900)">Modern / 근대</option>
                 <option value="contemporary" data-en="Contemporary (1900-Present)" data-ko="현대 (1900-현재)">Contemporary / 현대</option>
-                <option value="future" data-en="Future Concepts" data-ko="미래 개념">Future / 미래</option>
                 <option value="scifi" data-en="Science Fiction" data-ko="공상 과학">Sci-Fi / SF</option>
                 <option value="fantasy" data-en="Fantasy" data-ko="판타지">Fantasy / 판타지</option>
             </select>

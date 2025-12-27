@@ -35,6 +35,16 @@ permalink: /military-history/
                     <span class="lang-en-only">Contemporary</span>
                     <span class="lang-ko-only">현대</span>
                 </button>
+                <button class="era-filter-btn" data-era="scifi">
+                    <span class="lang-en-only">Sci-Fi</span>
+                    <span class="lang-ko-only">공상 과학</span>
+                </button>
+                <button class="era-filter-btn" data-era="fantasy">
+                    <span class="lang-en-only">Fantasy</span>
+                    <span class="lang-ko-only">판타지</span>
+                </button>
+                <option value="scifi" data-en="Science Fiction" data-ko="공상 과학">Sci-Fi / SF</option>
+                <option value="fantasy" data-en="Fantasy" data-ko="판타지">Fantasy / 판타지</option>
             </div>
         </div>
 
@@ -58,9 +68,6 @@ permalink: /military-history/
                     {% elsif era == "contemporary" %}
                         <span class="lang-en-only">🛡️ Contemporary Era (1900-Present)</span>
                         <span class="lang-ko-only">🛡️ 현대 (1900년-현재)</span>
-                    {% elsif era == "future" %}
-                        <span class="lang-en-only">🔮 Future Concepts</span>
-                        <span class="lang-ko-only">🔮 미래 개념</span>
                     {% elsif era == "scifi" %}
                         <span class="lang-en-only">🚀 Science Fiction</span>
                         <span class="lang-ko-only">🚀 공상과학</span>
