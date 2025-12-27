@@ -1,5 +1,275 @@
 # Strategic Wisdom Archive - Changelog
 
+## Version 0.0.6 - Wars Collection Architecture (December 28, 2024)
+
+### ⚔️ Major Feature: Wars as Top-Level Organizing Principle
+
+**Purpose:** Restructure the archive to organize content around historical conflicts, showing how defensive structures and strategies were utilized in actual warfare.
+
+**Architectural Change:**
+Previously, the archive showed individual fortifications and strategies as standalone entries. Now, wars serve as the primary organizing principle, with defensive structures shown as "utilized" within those conflicts.
+
+**New Hierarchy:**
+```
+Wars (Top Level)
+ └── Defensive Structures Utilized
+      └── Individual Fortifications
+ └── Strategies Employed
+      └── Tactical Systems
+```
+
+---
+
+### 🏗️ Implementation
+
+**Wars Collection:**
+- Created `_wars` collection in `_config.yml`
+- New collection type with permalink structure `/wars/:name/`
+- Custom layout `war-template.html` for detailed war pages
+
+**War Template Features:**
+- War Information (period, location, result)
+- Participants section (multiple sides with leaders)
+- Defensive Structures Utilized (links to fortification entries)
+- Strategies Employed (tactical systems used)
+- Major Battles & Sieges (detailed battle information)
+- Casualties & Impact
+- Strategic Significance
+- Modern Relevance
+
+**Data Schema:**
+```yaml
+war_info:
+  period_en/ko: "Time period"
+  location_en/ko: "Geographic location"
+  result_en/ko: "Outcome"
+
+participants:
+  - side_en/ko: "Allied/Enemy designation"
+    nations:
+      - name_en/ko: "Nation name"
+        leader_en/ko: "Commander/Leader"
+
+defensive_structures:
+  - name_en/ko: "Fortress name"
+    url: "/link/to/fortification/"
+    role_en/ko: "Strategic role in conflict"
+
+major_battles:
+  - name_en/ko: "Battle name"
+    date: "645 CE"
+    location_en/ko: "Battle location"
+    result_en/ko: "Battle outcome"
+    significance_en/ko: "Historical importance"
+```
+
+---
+
+### 📚 First War Entry: Goguryeo-Tang Wars (645-668 CE)
+
+**Historical Context:**
+23-year conflict between Goguryeo (Korea) and Tang Dynasty (China), demonstrating sophisticated defensive warfare.
+
+**Content Includes:**
+- 5 defensive structures utilized (Ansi, Bisa, Cheonli Jangseong, Baekam, Jeokri)
+- 4 major battles documented
+- Complete participant information
+- Strategic significance analysis
+- Modern military applications
+
+**Key Statistics:**
+- 300+ lines of historical content
+- Complete bilingual support (EN/KO)
+- Links to all 5 Goguryeo fortresses from v0.0.5
+- Demonstrates network defense principles
+
+---
+
+### 🔄 Military History Page Restructured
+
+**Previous Behavior:**
+- Showed both fortifications and strategies as individual cards
+- No clear organizing principle
+
+**New Behavior:**
+- Shows ONLY war cards organized by era
+- Each war card links to detailed war page
+- War pages then reference the structures/strategies used
+
+**Visual Design:**
+- War cards with red gradient badges (`war-badge`)
+- Era-based organization maintained
+- Clean separation of wars from individual structures
+
+**User Flow:**
+```
+Military History → Select War → See Structures Used → Click Structure → View Details
+```
+
+---
+
+### 🏰 Cross-Referencing: Wars on Fortifications Page
+
+**New Section Added:**
+"Related Wars & Conflicts" reference section on Defense Structures page
+
+**Features:**
+- Lists all wars that utilized defensive structures
+- Shows era badges (🏛️ Ancient, 🏰 Medieval, etc.)
+- Displays war period and fortification count
+- Direct links to war detail pages
+
+**Visual Design:**
+- Red gradient background with left border accent
+- Grid layout for war reference cards
+- Hover effects with card elevation
+- Responsive design for mobile
+
+**Purpose:**
+Allows users browsing fortifications to discover the historical conflicts where those structures played crucial roles.
+
+---
+
+### 🗺️ Navigation Changes
+
+**Wars Menu Removed:**
+- No standalone "Wars" navigation item
+- Users access wars through "Military History" page
+- Prevents duplicate navigation paths
+
+**Final Navigation Structure:**
+```
+Home → Military History → Defense Structures → Strategies →
+Simulator → Map → Insights
+```
+
+**Rationale:**
+Wars are accessed through Military History (chronological view), while Defense Structures and Strategies remain as browseable collections.
+
+---
+
+### 📁 Files Modified
+
+**Configuration:**
+- `_config.yml` - Added wars collection and default layout
+
+**New Files Created:**
+- `_layouts/war-template.html` - 400+ lines, comprehensive war display template
+- `_wars/goguryeo-tang-wars/goguryeo-tang-wars.md` - 300+ lines, first war entry
+
+**Updated Files:**
+- `military-history.md` - Changed to show only wars, added war badge styling
+- `fortifications.md` - Added wars reference section with 80+ lines of CSS
+- `_layouts/default.html` - Removed Wars from navigation menu
+
+---
+
+### 🎨 Visual Design Elements
+
+**War Badge:**
+- Red gradient: `linear-gradient(135deg, #e74c3c, #c0392b)`
+- Used on Military History page to distinguish wars from other content types
+
+**Wars Reference Section (Fortifications Page):**
+- Background: `linear-gradient(135deg, #e74c3c15, #c0392b15)`
+- Left border accent: `#e74c3c` (4px solid)
+- Card hover effect: Lift 4px with shadow
+- Era badges with emoji icons
+
+**War Detail Pages:**
+- Structures Used section: Blue gradient background
+- Strategies section: Blue gradient background
+- Battles section: Red gradient background
+- Significance section: Orange/gold gradient
+
+---
+
+### 📊 Statistics
+
+**New Content:**
+- 1 new collection type (wars)
+- 1 new layout template (400+ lines)
+- 1 comprehensive war entry (300+ lines)
+- 80+ lines of new CSS styling
+- Complete bilingual support (EN/KO)
+
+**Architecture Changes:**
+- Hierarchical content organization (wars → structures → fortifications)
+- Cross-referencing between collections (wars ↔ fortifications)
+- Centralized access through Military History page
+
+**Code Organization:**
+- Modular war template supporting multiple sections
+- Reusable card components for cross-references
+- Responsive grid layouts throughout
+
+---
+
+### 🎓 Strategic Benefits
+
+**For Users:**
+1. **Historical Context:** See how defenses were actually used in warfare
+2. **Connected Learning:** Understand relationships between conflicts and structures
+3. **Chronological Navigation:** Browse by era to see defensive evolution
+4. **Strategic Analysis:** Learn from real-world applications of defensive principles
+
+**For Content:**
+1. **Clear Hierarchy:** Wars organize complex military history
+2. **Scalability:** Easy to add new wars and link existing structures
+3. **Cross-Referencing:** Bidirectional links between wars and fortifications
+4. **Flexibility:** Template supports various war types and scales
+
+---
+
+### 💡 Educational Value
+
+**Case Study: Goguryeo-Tang Wars**
+Demonstrates:
+- **Defense in Depth**: Multiple fortress layers
+- **Network Effects**: Integrated defensive systems
+- **Asymmetric Warfare**: Small forces defeating larger armies
+- **Strategic Planning**: 16-year wall construction project
+- **Intelligence Warfare**: Early warning and communication networks
+
+**Modern Applications:**
+- Cybersecurity: Defense in depth principles
+- Business Strategy: Network defense against competitors
+- Military Doctrine: Integrated defensive systems
+- Project Management: Long-term strategic infrastructure
+
+---
+
+### 🔮 Future Expansion Ready
+
+**Supported War Types:**
+- Ancient conflicts (Greek, Roman, Persian wars)
+- Medieval sieges (Crusades, Mongol invasions)
+- Modern warfare (World Wars, fortified lines)
+- Contemporary conflicts (Modern defensive systems)
+
+**Template Flexibility:**
+- Supports multiple participants (coalition warfare)
+- Handles various battle types (sieges, field battles, naval)
+- Accommodates different strategic systems
+- Scales from small battles to world wars
+
+---
+
+### ✨ Key Innovations
+
+1. **Wars as Organizing Principle:** Shifted from structure-centric to conflict-centric view
+2. **Bidirectional Cross-Referencing:** Wars → Structures AND Structures → Wars
+3. **Integrated Timeline:** Maintains chronological view while adding depth
+4. **Modular Template Design:** Reusable sections for different war types
+5. **Educational Focus:** Emphasizes strategic lessons and modern applications
+
+---
+
+*Strategic Wisdom Archive v0.0.6*
+*"Understanding Defense Through the Lens of History's Conflicts"*
+
+---
+
 ## Version 0.0.5 - Goguryeo Defense System (December 27, 2024)
 
 ### 🏰 New Content: Five Goguryeo Fortresses

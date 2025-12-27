@@ -301,4 +301,88 @@ document.addEventListener('DOMContentLoaded', function() {
         text-align: center;
     }
 }
+
+/* Wars Reference Section */
+.wars-reference-section {
+    background: linear-gradient(135deg, #e74c3c15, #c0392b15);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    border-left: 4px solid #e74c3c;
+}
+
+.wars-reference-section h3 {
+    color: #e74c3c;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.wars-reference-section .section-description {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.wars-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.war-reference-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border: 2px solid transparent;
+}
+
+.war-reference-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(231, 76, 60, 0.2);
+    border-color: #e74c3c;
+}
+
+.war-era-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.war-reference-card h4 {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.war-period {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.war-structures-count {
+    color: #95a5a6;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 0.75rem;
+}
+
+@media (max-width: 768px) {
+    .wars-list {
+        grid-template-columns: 1fr;
+    }
+}
 </style>
