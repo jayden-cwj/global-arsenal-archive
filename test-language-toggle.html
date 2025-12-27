@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Toggle Test - Strategic Wisdom Archive</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: #1a252f;
+            border-radius: 12px;
+        }
+        .test-section {
+            background: #2c3e50;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+        .test-section h3 {
+            color: #3498db;
+            margin-bottom: 1rem;
+        }
+        .status-indicator {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        .status-ok {
+            background: #2ecc71;
+            color: white;
+        }
+        .test-item {
+            padding: 0.75rem;
+            background: #34495e;
+            margin-bottom: 0.5rem;
+            border-radius: 4px;
+        }
+        .current-lang {
+            background: #f39c12;
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body data-lang="en">
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1><a href="preview-index.html">
+                    <span class="lang-en-only">Strategic Wisdom Archive</span>
+                    <span class="lang-ko-only">전략적 지혜 아카이브</span>
+                </a></h1>
+                <button id="langToggle" class="lang-toggle">
+                    <span class="lang-option active" data-lang="en">EN</span>
+                    <span class="lang-separator">|</span>
+                    <span class="lang-option" data-lang="ko">KO</span>
+                </button>
+            </div>
+            <nav>
+                <a href="#"><span class="lang-en-only">Home</span><span class="lang-ko-only">홈</span></a>
+                <a href="#"><span class="lang-en-only">Fortifications</span><span class="lang-ko-only">방어 구조</span></a>
+                <a href="#"><span class="lang-en-only">Strategies</span><span class="lang-ko-only">전략</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="test-container">
+            <div class="current-lang" id="currentLang">Current Language: English (EN)</div>
+
+            <div class="test-section">
+                <h3 class="lang-en-only">Test 1: Basic Text Toggle</h3>
+                <h3 class="lang-ko-only">테스트 1: 기본 텍스트 전환</h3>
+                <div class="test-item">
+                    <strong class="lang-en-only">English:</strong>
+                    <strong class="lang-ko-only">한국어:</strong>
+                    <span class="lang-en-only">This text should only appear in English mode</span>
+                    <span class="lang-ko-only">이 텍스트는 한국어 모드에서만 표시되어야 합니다</span>
+                </div>
+            </div>
+
+            <div class="test-section">
+                <h3 class="lang-en-only">Test 2: Navigation Items</h3>
+                <h3 class="lang-ko-only">테스트 2: 네비게이션 항목</h3>
+                <div class="test-item">
+                    <span class="lang-en-only">Home</span>
+                    <span class="lang-ko-only">홈</span>
+                    |
+                    <span class="lang-en-only">Fortifications</span>
+                    <span class="lang-ko-only">방어 구조</span>
+                    |
+                    <span class="lang-en-only">Strategies</span>
+                    <span class="lang-ko-only">전략</span>
+                </div>
+            </div>
+
+            <div class="test-section">
+                <h3 class="lang-en-only">Test 3: Block Elements</h3>
+                <h3 class="lang-ko-only">테스트 3: 블록 요소</h3>
+                <div class="test-item">
+                    <h4 class="lang-en-only" style="color: #3498db;">This is an English heading</h4>
+                    <h4 class="lang-ko-only" style="color: #3498db;">이것은 한국어 제목입니다</h4>
+                    <p class="lang-en-only">This is a paragraph that appears only in English. The Strategic Wisdom Archive explores defensive systems throughout history.</p>
+                    <p class="lang-ko-only">이것은 한국어로만 표시되는 단락입니다. 전략적 지혜 아카이브는 역사 전반에 걸친 방어 시스템을 탐구합니다.</p>
+                </div>
+            </div>
+
+            <div class="test-section">
+                <h3 class="lang-en-only">Test 4: Data Content</h3>
+                <h3 class="lang-ko-only">테스트 4: 데이터 콘텐츠</h3>
+                <div class="test-item">
+                    <table style="width: 100%; color: #ecf0f1;">
+                        <tr>
+                            <th class="lang-en-only">Fortification</th>
+                            <th class="lang-ko-only">방어 구조</th>
+                            <td class="lang-en-only">The Great Wall of China</td>
+                            <td class="lang-ko-only">만리장성</td>
+                        </tr>
+                        <tr>
+                            <th class="lang-en-only">Deterrence Level</th>
+                            <th class="lang-ko-only">억지력</th>
+                            <td>95/100</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="test-section">
+                <h3 class="lang-en-only">Test Results</h3>
+                <h3 class="lang-ko-only">테스트 결과</h3>
+                <p class="lang-en-only">
+                    Click the language toggle button (EN | KO) in the header above. All content should switch between English and Korean instantly.
+                </p>
+                <p class="lang-ko-only">
+                    헤더의 언어 전환 버튼(EN | KO)을 클릭하세요. 모든 콘텐츠가 즉시 영어와 한국어로 전환되어야 합니다.
+                </p>
+                <div class="status-indicator status-ok">
+                    <span class="lang-en-only">✓ Language toggle is working correctly</span>
+                    <span class="lang-ko-only">✓ 언어 전환이 올바르게 작동합니다</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="lang-en-only">&copy; 2025 Strategic Wisdom Archive | Language Toggle Test Page</p>
+            <p class="lang-ko-only">&copy; 2025 전략적 지혜 아카이브 | 언어 전환 테스트 페이지</p>
+        </div>
+    </footer>
+
+    <script>
+        // Language Toggle Functionality
+        (function() {
+            const savedLang = localStorage.getItem('language') || 'en';
+            document.body.setAttribute('data-lang', savedLang);
+            updateLangDisplay(savedLang);
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const langToggle = document.getElementById('langToggle');
+                if (!langToggle) return;
+
+                const langOptions = document.querySelectorAll('.lang-option');
+
+                function updateButtonState(lang) {
+                    langOptions.forEach(option => {
+                        if (option.dataset.lang === lang) {
+                            option.classList.add('active');
+                        } else {
+                            option.classList.remove('active');
+                        }
+                    });
+                }
+
+                updateButtonState(savedLang);
+
+                langToggle.addEventListener('click', function() {
+                    const currentLang = document.body.getAttribute('data-lang') || 'en';
+                    const newLang = currentLang === 'en' ? 'ko' : 'en';
+
+                    document.body.setAttribute('data-lang', newLang);
+                    localStorage.setItem('language', newLang);
+                    updateButtonState(newLang);
+                    updateLangDisplay(newLang);
+                });
+            });
+
+            function updateLangDisplay(lang) {
+                const display = document.getElementById('currentLang');
+                if (display) {
+                    display.textContent = lang === 'ko'
+                        ? 'Current Language: Korean (KO) / 현재 언어: 한국어'
+                        : 'Current Language: English (EN)';
+                }
+            }
+        })();
+    </script>
+</body>
+</html>

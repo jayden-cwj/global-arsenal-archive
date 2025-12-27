@@ -1,4 +1,4 @@
-/* Global Arsenal Archive - Tactical Theme */
+/* Strategic Wisdom Archive - Defensive Wisdom Theme */
 
 /* CSS Reset & Base */
 * {
@@ -391,13 +391,30 @@ body {
     display: none !important;
 }
 
+.lang-en-only {
+    display: block;
+}
+
+/* For inline elements */
+span.lang-en-only,
+span.lang-ko-only,
+time.lang-en-only,
+time.lang-ko-only {
+    display: inline;
+}
+
 /* When Korean is selected, hide English and show Korean */
 body[data-lang="ko"] .lang-en-only {
     display: none !important;
 }
 
 body[data-lang="ko"] .lang-ko-only {
-    display: revert !important;
+    display: block !important;
+}
+
+body[data-lang="ko"] span.lang-ko-only,
+body[data-lang="ko"] time.lang-ko-only {
+    display: inline !important;
 }
 
 /* Make Korean titles larger when Korean is active */
@@ -409,6 +426,205 @@ body[data-lang="ko"] .card-title-ko {
 body[data-lang="ko"] .title-ko {
     font-size: 2.5rem;
     color: #3498db;
+}
+
+/* Special Attributes Badges */
+.special-attributes-section {
+    background: linear-gradient(135deg, #667eea15, #764ba215);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border-left: 4px solid #f39c12;
+}
+
+.special-attributes-section h3 {
+    color: #f39c12;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.attributes-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.attribute-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.attribute-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(243, 156, 18, 0.4);
+}
+
+.badge-icon {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Different colors for different attribute types */
+.badge-unesco-world-heritage {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+    box-shadow: 0 4px 12px rgba(155, 89, 182, 0.3);
+}
+
+.badge-unesco-world-heritage:hover {
+    box-shadow: 0 6px 16px rgba(155, 89, 182, 0.4);
+}
+
+.badge-ancient-wonder {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
+
+.badge-ancient-wonder:hover {
+    box-shadow: 0 6px 16px rgba(231, 76, 60, 0.4);
+}
+
+.badge-communication-innovation,
+.badge-scientific-design {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.badge-communication-innovation:hover,
+.badge-scientific-design:hover {
+    box-shadow: 0 6px 16px rgba(52, 152, 219, 0.4);
+}
+
+.badge-longest-structure,
+.badge-documented-construction {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+}
+
+.badge-longest-structure:hover,
+.badge-documented-construction:hover {
+    box-shadow: 0 6px 16px rgba(46, 204, 113, 0.4);
+}
+
+.badge-hybrid-architecture {
+    background: linear-gradient(135deg, #e67e22, #d35400);
+    box-shadow: 0 4px 12px rgba(230, 126, 34, 0.3);
+}
+
+.badge-hybrid-architecture:hover {
+    box-shadow: 0 6px 16px rgba(230, 126, 34, 0.4);
+}
+
+/* Attribution Section (Fortifications) */
+.attribution-section {
+    background: linear-gradient(135deg, #34495e15, #2c3e5015);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border-left: 4px solid #3498db;
+}
+
+.attribution-section h3 {
+    color: #3498db;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.attribution-phase {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(26, 37, 47, 0.4);
+    border-radius: 8px;
+    border: 1px solid #34495e;
+}
+
+.attribution-phase:last-child {
+    margin-bottom: 0;
+}
+
+.phase-title {
+    color: #5dade2;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #34495e;
+}
+
+.attribution-phase .info-table {
+    margin-top: 1rem;
+}
+
+.role-description {
+    color: #95a5a6;
+    font-size: 0.9rem;
+    font-style: italic;
+    display: block;
+    margin-top: 0.3rem;
+}
+
+/* Historical Applications Section (Strategies) */
+.historical-applications-section {
+    background: linear-gradient(135deg, #8e44ad15, #9b59b615);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border-left: 4px solid #9b59b6;
+}
+
+.historical-applications-section h3 {
+    color: #9b59b6;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-description {
+    color: #bdc3c7;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.application-instance {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(26, 37, 47, 0.4);
+    border-radius: 8px;
+    border: 1px solid #8e44ad;
+}
+
+.application-instance:last-child {
+    margin-bottom: 0;
+}
+
+.application-period {
+    color: #c39bd3;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #8e44ad;
+}
+
+.application-instance .info-table {
+    margin-top: 1rem;
+}
+
+.application-instance em {
+    color: #d7bde2;
+    font-size: 0.95rem;
 }
 
 /* Responsive Design */

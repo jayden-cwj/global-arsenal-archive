@@ -1,0 +1,300 @@
+---
+layout: default
+---
+<div class="fortification-detail container">
+    <div class="header-section">
+        <img src="{{ page.thumbnail | relative_url }}" alt="{{ page.title_en }}" class="main-thumbnail">
+        <div class="title-section">
+            <h1 class="title-en lang-en-only">{{ page.title_en }}</h1>
+            <h2 class="title-ko lang-ko-only">{{ page.title_ko }}</h2>
+            <p class="summary-en lang-en-only">{{ page.summary_en }}</p>
+            <p class="summary-ko lang-ko-only">{{ page.summary_ko }}</p>
+        </div>
+    </div>
+
+    <!-- Special Attributes Tags -->
+    {% if page.special_attributes %}
+    <div class="special-attributes-section">
+        <h3 class="lang-en-only">Special Attributes</h3>
+        <h3 class="lang-ko-only">특별 속성</h3>
+        <div class="attributes-badges">
+            {% for attr in page.special_attributes %}
+            <span class="attribute-badge badge-{{ attr.tag }}">
+                <span class="badge-icon">✦</span>
+                <span class="lang-en-only">{{ attr.label_en }}</span>
+                <span class="lang-ko-only">{{ attr.label_ko }}</span>
+            </span>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="data-grid">
+        <!-- Location Information -->
+        {% if page.location or page.region_en %}
+        <div class="info-section">
+            <h3 class="lang-en-only">Location</h3>
+            <h3 class="lang-ko-only">위치</h3>
+            <table class="info-table">
+                {% if page.region_en %}
+                <tr>
+                    <th class="lang-en-only">Region</th>
+                    <th class="lang-ko-only">지역</th>
+                    <td class="lang-en-only">{{ page.region_en }}</td>
+                    <td class="lang-ko-only">{{ page.region_ko }}</td>
+                </tr>
+                {% endif %}
+                {% if page.location %}
+                <tr>
+                    <th class="lang-en-only">Coordinates</th>
+                    <th class="lang-ko-only">좌표</th>
+                    <td>{{ page.location[0] }}, {{ page.location[1] }}</td>
+                </tr>
+                {% endif %}
+            </table>
+        </div>
+        {% endif %}
+
+        <!-- Strategic Metrics -->
+        {% if page.metrics %}
+        <div class="info-section">
+            <h3 class="lang-en-only">Strategic Metrics</h3>
+            <h3 class="lang-ko-only">전략 지표</h3>
+            <table class="info-table">
+                {% if page.metrics.deterrence_level %}
+                <tr>
+                    <th class="lang-en-only">Deterrence Level</th>
+                    <th class="lang-ko-only">억지력</th>
+                    <td>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: {{ page.metrics.deterrence_level }}%"></div>
+                            <span class="metric-value">{{ page.metrics.deterrence_level }}/100</span>
+                        </div>
+                    </td>
+                </tr>
+                {% endif %}
+                {% if page.metrics.communication_efficiency %}
+                <tr>
+                    <th class="lang-en-only">Communication Efficiency</th>
+                    <th class="lang-ko-only">통신 효율성</th>
+                    <td>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: {{ page.metrics.communication_efficiency }}%"></div>
+                            <span class="metric-value">{{ page.metrics.communication_efficiency }}/100</span>
+                        </div>
+                    </td>
+                </tr>
+                {% endif %}
+                {% if page.metrics.resource_cost %}
+                <tr>
+                    <th class="lang-en-only">Resource Cost</th>
+                    <th class="lang-ko-only">자원 비용</th>
+                    <td>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: {{ page.metrics.resource_cost }}%"></div>
+                            <span class="metric-value">{{ page.metrics.resource_cost }}/100</span>
+                        </div>
+                    </td>
+                </tr>
+                {% endif %}
+                {% if page.metrics.defensive_durability %}
+                <tr>
+                    <th class="lang-en-only">Defensive Durability</th>
+                    <th class="lang-ko-only">방어 내구성</th>
+                    <td>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: {{ page.metrics.defensive_durability }}%"></div>
+                            <span class="metric-value">{{ page.metrics.defensive_durability }}/100</span>
+                        </div>
+                    </td>
+                </tr>
+                {% endif %}
+                {% if page.metrics.terrain_advantage %}
+                <tr>
+                    <th class="lang-en-only">Terrain Advantage</th>
+                    <th class="lang-ko-only">지형 이점</th>
+                    <td>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: {{ page.metrics.terrain_advantage }}%"></div>
+                            <span class="metric-value">{{ page.metrics.terrain_advantage }}/100</span>
+                        </div>
+                    </td>
+                </tr>
+                {% endif %}
+                {% if page.metrics.strategic_utility %}
+                <tr>
+                    <th class="lang-en-only">Strategic Utility</th>
+                    <th class="lang-ko-only">전략적 효용성</th>
+                    <td>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: {{ page.metrics.strategic_utility }}%; background: linear-gradient(90deg, #f39c12, #e67e22);"></div>
+                            <span class="metric-value">{{ page.metrics.strategic_utility }}/100</span>
+                        </div>
+                    </td>
+                </tr>
+                {% endif %}
+            </table>
+        </div>
+        {% endif %}
+
+        <!-- Historical Information -->
+        {% if page.history %}
+        <div class="info-section">
+            <h3 class="lang-en-only">Historical Context</h3>
+            <h3 class="lang-ko-only">역사적 배경</h3>
+            <table class="info-table">
+                {% if page.history.period_en %}
+                <tr>
+                    <th class="lang-en-only">Period</th>
+                    <th class="lang-ko-only">시대</th>
+                    <td class="lang-en-only">{{ page.history.period_en }}</td>
+                    <td class="lang-ko-only">{{ page.history.period_ko }}</td>
+                </tr>
+                {% endif %}
+                {% if page.history.primary_builders_en %}
+                <tr>
+                    <th class="lang-en-only">Built By</th>
+                    <th class="lang-ko-only">건설자</th>
+                    <td class="lang-en-only">{{ page.history.primary_builders_en }}</td>
+                    <td class="lang-ko-only">{{ page.history.primary_builders_ko }}</td>
+                </tr>
+                {% endif %}
+                {% if page.history.construction_duration_en %}
+                <tr>
+                    <th class="lang-en-only">Construction Duration</th>
+                    <th class="lang-ko-only">건설 기간</th>
+                    <td class="lang-en-only">{{ page.history.construction_duration_en }}</td>
+                    <td class="lang-ko-only">{{ page.history.construction_duration_ko }}</td>
+                </tr>
+                {% endif %}
+                {% if page.history.total_length %}
+                <tr>
+                    <th class="lang-en-only">Total Length</th>
+                    <th class="lang-ko-only">전체 길이</th>
+                    <td>{{ page.history.total_length }}</td>
+                </tr>
+                {% endif %}
+            </table>
+        </div>
+        {% endif %}
+
+        <!-- Attribution (Who Built It & Who Commissioned It) -->
+        {% if page.attribution %}
+        <div class="info-section attribution-section">
+            <h3 class="lang-en-only">Attribution: Architects & Commissioners</h3>
+            <h3 class="lang-ko-only">귀속: 설계자 및 의뢰인</h3>
+            {% for attr in page.attribution %}
+            <div class="attribution-phase">
+                <h4 class="phase-title">
+                    <span class="lang-en-only">{{ attr.phase_en }}</span>
+                    <span class="lang-ko-only">{{ attr.phase_ko }}</span>
+                </h4>
+                <table class="info-table">
+                    {% if attr.commissioner_en %}
+                    <tr>
+                        <th class="lang-en-only">Commissioner</th>
+                        <th class="lang-ko-only">의뢰인</th>
+                        <td>
+                            <strong class="lang-en-only">{{ attr.commissioner_en }}</strong>
+                            <strong class="lang-ko-only">{{ attr.commissioner_ko }}</strong>
+                            <br>
+                            <span class="role-description lang-en-only">{{ attr.commissioner_role_en }}</span>
+                            <span class="role-description lang-ko-only">{{ attr.commissioner_role_ko }}</span>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% if attr.chief_architect_en %}
+                    <tr>
+                        <th class="lang-en-only">Chief Architect</th>
+                        <th class="lang-ko-only">수석 설계자</th>
+                        <td>
+                            <strong class="lang-en-only">{{ attr.chief_architect_en }}</strong>
+                            <strong class="lang-ko-only">{{ attr.chief_architect_ko }}</strong>
+                            <br>
+                            <span class="role-description lang-en-only">{{ attr.architect_role_en }}</span>
+                            <span class="role-description lang-ko-only">{{ attr.architect_role_ko }}</span>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    {% if attr.workforce_en %}
+                    <tr>
+                        <th class="lang-en-only">Workforce</th>
+                        <th class="lang-ko-only">노동력</th>
+                        <td>
+                            <span class="lang-en-only">{{ attr.workforce_en }}</span>
+                            <span class="lang-ko-only">{{ attr.workforce_ko }}</span>
+                        </td>
+                    </tr>
+                    {% endif %}
+                </table>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Defense Features -->
+        {% if page.defense_features %}
+        <div class="info-section">
+            <h3 class="lang-en-only">Defense Architecture</h3>
+            <h3 class="lang-ko-only">방어 구조</h3>
+            <ul class="features-list">
+                {% for feature in page.defense_features %}
+                <li class="lang-en-only">{{ feature.feature_en }}</li>
+                <li class="lang-ko-only">{{ feature.feature_ko }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <!-- Key Insight -->
+        {% if page.key_insight_en %}
+        <div class="info-section insight-highlight">
+            <h3 class="lang-en-only">Key Insight</h3>
+            <h3 class="lang-ko-only">핵심 통찰</h3>
+            <p class="key-insight lang-en-only">{{ page.key_insight_en }}</p>
+            <p class="key-insight lang-ko-only">{{ page.key_insight_ko }}</p>
+        </div>
+        {% endif %}
+
+        <!-- Modern Applications -->
+        {% if page.modern_applications_en %}
+        <div class="info-section">
+            <h3 class="lang-en-only">Modern Relevance</h3>
+            <h3 class="lang-ko-only">현대적 의의</h3>
+            <ul class="applications-list lang-en-only">
+                {% for app in page.modern_applications_en %}
+                <li>{{ app }}</li>
+                {% endfor %}
+            </ul>
+            <ul class="applications-list lang-ko-only">
+                {% for app in page.modern_applications_ko %}
+                <li>{{ app }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <!-- Strategic Lessons -->
+        {% if page.lessons_learned %}
+        <div class="info-section">
+            <h3 class="lang-en-only">Strategic Lessons</h3>
+            <h3 class="lang-ko-only">전략적 교훈</h3>
+            <ul class="lessons-list">
+                {% for lesson in page.lessons_learned %}
+                <li class="lang-en-only">{{ lesson.lesson_en }}</li>
+                <li class="lang-ko-only">{{ lesson.lesson_ko }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Main Content (Markdown Body) -->
+    <div class="content-body">
+        {{ content }}
+    </div>
+
+    <div class="back-link">
+        <a href="{{ '/' | relative_url }}">&larr; <span class="lang-en-only">Back to Dashboard</span><span class="lang-ko-only">대시보드로 돌아가기</span></a>
+    </div>
+</div>

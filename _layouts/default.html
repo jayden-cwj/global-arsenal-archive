@@ -10,7 +10,10 @@
     <header class="site-header">
         <div class="container">
             <div class="header-content">
-                <h1><a href="{{ '/' | relative_url }}">Global Arsenal Archive</a></h1>
+                <h1><a href="{{ '/' | relative_url }}">
+                    <span class="lang-en-only">Strategic Wisdom Archive</span>
+                    <span class="lang-ko-only">전략적 지혜 아카이브</span>
+                </a></h1>
                 <button id="langToggle" class="lang-toggle" aria-label="Language Toggle">
                     <span class="lang-option active" data-lang="en">EN</span>
                     <span class="lang-separator">|</span>
@@ -18,9 +21,30 @@
                 </button>
             </div>
             <nav>
-                <a href="{{ '/' | relative_url }}">Home</a>
-                <a href="{{ '/weapons/' | relative_url }}">Weapons</a>
-                <a href="{{ '/wars/' | relative_url }}">Wars</a>
+                <a href="{{ '/' | relative_url }}">
+                    <span class="lang-en-only">Home</span>
+                    <span class="lang-ko-only">홈</span>
+                </a>
+                <a href="{{ '/fortifications/' | relative_url }}">
+                    <span class="lang-en-only">Fortifications</span>
+                    <span class="lang-ko-only">방어 구조</span>
+                </a>
+                <a href="{{ '/strategies/' | relative_url }}">
+                    <span class="lang-en-only">Strategies</span>
+                    <span class="lang-ko-only">전략</span>
+                </a>
+                <a href="{{ '/simulator/' | relative_url }}">
+                    <span class="lang-en-only">Simulator</span>
+                    <span class="lang-ko-only">시뮬레이터</span>
+                </a>
+                <a href="{{ '/map/' | relative_url }}">
+                    <span class="lang-en-only">Map</span>
+                    <span class="lang-ko-only">지도</span>
+                </a>
+                <a href="{{ '/insights/' | relative_url }}">
+                    <span class="lang-en-only">Insights</span>
+                    <span class="lang-ko-only">인사이트</span>
+                </a>
             </nav>
         </div>
     </header>
@@ -31,7 +55,8 @@
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2025 Global Arsenal Archive | Lead Developer: Jayden</p>
+            <p class="lang-en-only">&copy; 2025 Strategic Wisdom Archive | Exploring the Logic of Defense, Protection, and Peace</p>
+            <p class="lang-ko-only">&copy; 2025 전략적 지혜 아카이브 | 방어, 보호, 평화의 논리 탐구</p>
         </div>
     </footer>
 

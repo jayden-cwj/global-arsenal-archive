@@ -1,30 +1,38 @@
-# Global Arsenal Archive Configuration
-title: "Global Arsenal Archive"
-description: "A data-driven platform archiving global military history and weapon specifications"
-baseurl: "/global-arsenal-archive"
+# Strategic Wisdom Archive Configuration
+title: "Strategic Wisdom Archive"
+description: "A bilingual platform exploring the logic of defense, protection, and strategic wisdom throughout history"
+baseurl: "/strategic-wisdom-archive"
 url: "https://jayden-cwj.github.io"
 
 # Collections Configuration
 collections:
-  weapons:
+  fortifications:
     output: true
-    permalink: /weapons/:name/
-  wars:
+    permalink: /fortifications/:name/
+  strategies:
     output: true
-    permalink: /wars/:name/
+    permalink: /strategies/:name/
+  insights:
+    output: true
+    permalink: /insights/:name/
 
 # Default settings for collections
 defaults:
   - scope:
       path: ""
-      type: "weapons"
+      type: "fortifications"
     values:
-      layout: "weapon-template"
+      layout: "fortification-template"
   - scope:
       path: ""
-      type: "wars"
+      type: "strategies"
     values:
-      layout: "war-template"
+      layout: "strategy-template"
+  - scope:
+      path: ""
+      type: "insights"
+    values:
+      layout: "insight-template"
 
 # Build settings
 markdown: kramdown

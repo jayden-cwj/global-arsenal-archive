@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Logic Simulator - Strategic Wisdom Archive</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .preview-notice {
+            background: #f39c12;
+            color: #000;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .simulator-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .simulator-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .simulator-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ecf0f1;
+        }
+
+        .simulator-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .simulator-controls h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #ecf0f1;
+        }
+
+        .control-group {
+            margin-bottom: 2rem;
+        }
+
+        .control-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #ecf0f1;
+        }
+
+        .help-text {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: normal;
+            color: #95a5a6;
+            margin-top: 0.25rem;
+        }
+
+        .control-group input[type="range"] {
+            width: 100%;
+            height: 8px;
+            background: #2c3e50;
+            border-radius: 5px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .control-group input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #3498db;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .value-display {
+            display: inline-block;
+            margin-left: 1rem;
+            font-weight: 700;
+            color: #3498db;
+            font-size: 1.1rem;
+        }
+
+        .preset-btn {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .preset-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .result-display {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .survival-score {
+            font-size: 4rem;
+            font-weight: 800;
+            margin: 1rem 0;
+        }
+
+        .score-bar {
+            width: 100%;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+
+        .score-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2ecc71, #27ae60);
+            transition: width 0.5s ease;
+            border-radius: 15px;
+        }
+
+        .insights-panel {
+            background: #1a252f;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .insights-panel h3 {
+            color: #ecf0f1;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body data-lang="en">
+    <div class="preview-notice">
+        📋 INTERACTIVE PREVIEW - Strategic Logic Simulator (Fully Functional)
+    </div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1><a href="preview-index.html">
+                    <span class="lang-en-only">Strategic Wisdom Archive</span>
+                    <span class="lang-ko-only">전략적 지혜 아카이브</span>
+                </a></h1>
+                <button id="langToggle" class="lang-toggle">
+                    <span class="lang-option active" data-lang="en">EN</span>
+                    <span class="lang-separator">|</span>
+                    <span class="lang-option" data-lang="ko">KO</span>
+                </button>
+            </div>
+            <nav>
+                <a href="preview-index.html"><span class="lang-en-only">Home</span><span class="lang-ko-only">홈</span></a>
+                <a href="preview-fortifications.html"><span class="lang-en-only">Fortifications</span><span class="lang-ko-only">방어 구조</span></a>
+                <a href="#"><span class="lang-en-only">Strategies</span><span class="lang-ko-only">전략</span></a>
+                <a href="#" class="active"><span class="lang-en-only">Simulator</span><span class="lang-ko-only">시뮬레이터</span></a>
+                <a href="#"><span class="lang-en-only">Map</span><span class="lang-ko-only">지도</span></a>
+                <a href="#"><span class="lang-en-only">Insights</span><span class="lang-ko-only">인사이트</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="simulator-container">
+            <div class="simulator-header">
+                <h1 class="lang-en-only">Strategic Logic Simulator</h1>
+                <h1 class="lang-ko-only">전략 논리 시뮬레이터</h1>
+                <p class="lang-en-only" style="color: #95a5a6;">Test defensive strategies by adjusting key metrics to see their impact on overall survival probability</p>
+                <p class="lang-ko-only" style="color: #95a5a6;">주요 지표를 조정하여 전체 생존 확률에 미치는 영향을 확인하여 방어 전략을 테스트하세요</p>
+            </div>
+
+            <div class="simulator-body">
+                <div class="simulator-controls">
+                    <h2 class="lang-en-only">Defense System Variables</h2>
+                    <h2 class="lang-ko-only">방어 시스템 변수</h2>
+
+                    <div class="control-group">
+                        <label for="deterrence" class="lang-en-only">
+                            Deterrence Level (Psychological Impact)
+                            <span class="help-text">How intimidating is the defense to potential attackers?</span>
+                        </label>
+                        <label for="deterrence" class="lang-ko-only">
+                            억지력 (심리적 영향)
+                            <span class="help-text">방어 시설이 잠재적 공격자에게 얼마나 위협적입니까?</span>
+                        </label>
+                        <input type="range" id="deterrence" min="0" max="100" value="50" step="5">
+                        <span class="value-display" id="deterrence-value">50</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="communication" class="lang-en-only">
+                            Communication Efficiency
+                            <span class="help-text">How quickly can warnings spread?</span>
+                        </label>
+                        <label for="communication" class="lang-ko-only">
+                            통신 효율성
+                            <span class="help-text">경고가 얼마나 빨리 전파될 수 있습니까?</span>
+                        </label>
+                        <input type="range" id="communication" min="0" max="100" value="50" step="5">
+                        <span class="value-display" id="communication-value">50</span>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="durability" class="lang-en-only">
+                            Defensive Durability
+                            <span class="help-text">Physical resistance to assault</span>
+                        </label>
+                        <label for="durability" class="lang-ko-only">
+                            방어 내구성
+                            <span class="help-text">물리적 공격에 대한 저항력</span>
+                        </label>
+                        <input type="range" id="durability" min="0" max="100" value="50" step="5">
+                        <span class="value-display" id="durability-value">50</span>
+                    </div>
+
+                    <div style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid #2c3e50;">
+                        <h3 class="lang-en-only" style="color: #ecf0f1; margin-bottom: 1rem;">Historical Presets:</h3>
+                        <h3 class="lang-ko-only" style="color: #ecf0f1; margin-bottom: 1rem;">역사적 사전 설정:</h3>
+                        <button onclick="loadPreset('great-wall')" class="preset-btn">Great Wall / 만리장성</button>
+                        <button onclick="loadPreset('balanced')" class="preset-btn">Balanced System / 균형 시스템</button>
+                    </div>
+                </div>
+
+                <div class="simulator-results">
+                    <div class="result-display">
+                        <h2 class="lang-en-only">Survival Probability</h2>
+                        <h2 class="lang-ko-only">생존 확률</h2>
+                        <div class="survival-score" id="survival-score">50%</div>
+                        <div class="score-bar">
+                            <div class="score-fill" id="score-fill" style="width: 50%"></div>
+                        </div>
+                        <p class="score-label" id="score-label" style="font-size: 1.3rem; font-weight: 600; margin-top: 1rem;">Moderate Defense</p>
+                    </div>
+
+                    <div class="insights-panel">
+                        <h3 class="lang-en-only">Strategic Analysis</h3>
+                        <h3 class="lang-ko-only">전략적 분석</h3>
+                        <div id="analysis-output" style="color: #95a5a6; line-height: 1.8;">
+                            <p class="lang-en-only">Adjust the variables above to see how different factors impact defensive effectiveness.</p>
+                            <p class="lang-ko-only">위의 변수를 조정하여 다양한 요소가 방어 효율성에 미치는 영향을 확인하세요.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="lang-en-only">&copy; 2025 Strategic Wisdom Archive | Exploring the Logic of Defense, Protection, and Peace</p>
+            <p class="lang-ko-only">&copy; 2025 전략적 지혜 아카이브 | 방어, 보호, 평화의 논리 탐구</p>
+        </div>
+    </footer>
+
+    <script>
+        const metrics = { deterrence: 50, communication: 50, durability: 50 };
+        const weights = { deterrence: 0.20, communication: 0.45, durability: 0.35 };
+
+        const presets = {
+            'great-wall': { deterrence: 95, communication: 85, durability: 80 },
+            'balanced': { deterrence: 70, communication: 70, durability: 70 }
+        };
+
+        function updateSimulator() {
+            const score = Math.round(
+                metrics.deterrence * weights.deterrence +
+                metrics.communication * weights.communication +
+                metrics.durability * weights.durability
+            );
+
+            document.getElementById('survival-score').textContent = score + '%';
+            document.getElementById('score-fill').style.width = score + '%';
+
+            const label = score >= 80 ? 'Exceptional Defense' :
+                         score >= 60 ? 'Strong Defense' :
+                         score >= 40 ? 'Moderate Defense' : 'Vulnerable Defense';
+            document.getElementById('score-label').textContent = label;
+
+            const analysis = score >= 80 ?
+                'This defense system demonstrates exceptional strategic design with multi-layered security.' :
+                score >= 60 ?
+                'Solid defensive position with notable strengths. Consider optimizing communication networks.' :
+                score >= 40 ?
+                'Moderate effectiveness. Prioritize communication efficiency (45% weight) for maximum impact.' :
+                'Critical vulnerabilities detected. Focus on communication networks and physical fortifications.';
+
+            document.getElementById('analysis-output').innerHTML = `<p>${analysis}</p>`;
+        }
+
+        function loadPreset(name) {
+            const preset = presets[name];
+            Object.keys(preset).forEach(key => {
+                metrics[key] = preset[key];
+                document.getElementById(key).value = preset[key];
+                document.getElementById(key + '-value').textContent = preset[key];
+            });
+            updateSimulator();
+        }
+
+        ['deterrence', 'communication', 'durability'].forEach(id => {
+            const slider = document.getElementById(id);
+            const display = document.getElementById(id + '-value');
+            slider.addEventListener('input', function() {
+                metrics[id] = parseInt(this.value);
+                display.textContent = this.value;
+                updateSimulator();
+            });
+        });
+
+        updateSimulator();
+
+        // Language toggle
+        (function() {
+            const savedLang = localStorage.getItem('language') || 'en';
+            document.body.setAttribute('data-lang', savedLang);
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const langToggle = document.getElementById('langToggle');
+                if (!langToggle) return;
+
+                const langOptions = document.querySelectorAll('.lang-option');
+
+                function updateButtonState(lang) {
+                    langOptions.forEach(option => {
+                        option.classList.toggle('active', option.dataset.lang === lang);
+                    });
+                }
+
+                updateButtonState(savedLang);
+
+                langToggle.addEventListener('click', function() {
+                    const currentLang = document.body.getAttribute('data-lang') || 'en';
+                    const newLang = currentLang === 'en' ? 'ko' : 'en';
+                    document.body.setAttribute('data-lang', newLang);
+                    localStorage.setItem('language', newLang);
+                    updateButtonState(newLang);
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

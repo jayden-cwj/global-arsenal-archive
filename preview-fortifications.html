@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortifications - Strategic Wisdom Archive</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .preview-notice {
+            background: #f39c12;
+            color: #000;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .collection-filters {
+            background: #1a252f;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .filter-group label {
+            font-weight: 600;
+            color: #ecf0f1;
+        }
+
+        .filter-select {
+            padding: 0.5rem 1rem;
+            border: 2px solid #2c3e50;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            background: #0f1419;
+            color: #ecf0f1;
+        }
+
+        .results-count {
+            margin-left: auto;
+            color: #95a5a6;
+        }
+
+        .metric-badge {
+            background: #2c3e50;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #ecf0f1;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body data-lang="en">
+    <div class="preview-notice">
+        📋 STATIC PREVIEW - Fortifications Collection Page
+    </div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1><a href="preview-index.html">
+                    <span class="lang-en-only">Strategic Wisdom Archive</span>
+                    <span class="lang-ko-only">전략적 지혜 아카이브</span>
+                </a></h1>
+                <button id="langToggle" class="lang-toggle">
+                    <span class="lang-option active" data-lang="en">EN</span>
+                    <span class="lang-separator">|</span>
+                    <span class="lang-option" data-lang="ko">KO</span>
+                </button>
+            </div>
+            <nav>
+                <a href="preview-index.html"><span class="lang-en-only">Home</span><span class="lang-ko-only">홈</span></a>
+                <a href="#" class="active"><span class="lang-en-only">Fortifications</span><span class="lang-ko-only">방어 구조</span></a>
+                <a href="#"><span class="lang-en-only">Strategies</span><span class="lang-ko-only">전략</span></a>
+                <a href="preview-simulator.html"><span class="lang-en-only">Simulator</span><span class="lang-ko-only">시뮬레이터</span></a>
+                <a href="#"><span class="lang-en-only">Map</span><span class="lang-ko-only">지도</span></a>
+                <a href="#"><span class="lang-en-only">Insights</span><span class="lang-ko-only">인사이트</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="dashboard container">
+            <div class="dashboard-header">
+                <h1 class="lang-en-only">Fortifications</h1>
+                <h1 class="lang-ko-only">방어 구조</h1>
+                <p class="subtitle lang-en-only">Architectural systems of protection throughout human history</p>
+                <p class="subtitle lang-ko-only">인류 역사 전반에 걸친 보호의 건축 시스템</p>
+            </div>
+
+            <div class="collection-filters">
+                <div class="filter-group">
+                    <label class="lang-en-only">Filter by Era:</label>
+                    <label class="lang-ko-only">시대별 필터:</label>
+                    <select class="filter-select">
+                        <option value="all">All Eras / 모든 시대</option>
+                        <option value="ancient">Ancient / 고대</option>
+                        <option value="medieval">Medieval / 중세</option>
+                        <option value="modern">Modern / 근대</option>
+                        <option value="contemporary">Contemporary / 현대</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label class="lang-en-only">Sort by:</label>
+                    <label class="lang-ko-only">정렬:</label>
+                    <select class="filter-select">
+                        <option value="name-asc">Name (A-Z) / 이름</option>
+                        <option value="year-asc">Year (Oldest) / 연도 (오래된 순)</option>
+                        <option value="deterrence-desc">Deterrence / 억지력</option>
+                    </select>
+                </div>
+
+                <div class="results-count">
+                    <span class="lang-en-only">Showing 2 of 2 items</span>
+                    <span class="lang-ko-only">2개 중 2개 항목 표시</span>
+                </div>
+            </div>
+
+            <section class="collection-section">
+                <div class="grid-container">
+                    <a href="preview-great-wall.html" class="item-card">
+                        <div class="card-image">
+                            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white;">
+                                <span style="font-size: 4rem;">🏰</span>
+                                <span style="font-size: 1.2rem; font-weight: 700; margin-top: 0.5rem;">The Great Wall of China</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title lang-en-only" style="color: #ecf0f1;">The Great Wall of China</h3>
+                            <h3 class="card-title lang-ko-only" style="color: #ecf0f1;">만리장성</h3>
+                            <p class="card-summary lang-en-only">A series of fortifications built to protect Chinese states from invasions, demonstrating strategic defense through communication networks and terrain advantage</p>
+                            <p class="card-summary lang-ko-only">중국을 침략으로부터 보호하기 위해 건설된 일련의 요새로, 통신 네트워크와 지형 우위를 통한 전략적 방어를 보여줍니다</p>
+                            <div style="margin-top: 0.75rem;">
+                                <span class="metric-badge" title="Deterrence">🛡️ 95</span>
+                                <span class="metric-badge" title="Communication">📡 85</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#" class="item-card">
+                        <div class="card-image">
+                            <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white;">
+                                <span style="font-size: 4rem;">🏰</span>
+                                <span style="font-size: 1.2rem; font-weight: 700; margin-top: 0.5rem; text-align: center; padding: 0 1rem;">More fortifications coming soon...</span>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title lang-en-only" style="color: #ecf0f1;">More Coming Soon</h3>
+                            <h3 class="card-title lang-ko-only" style="color: #ecf0f1;">곧 추가됩니다</h3>
+                            <p class="card-summary lang-en-only">Additional fortifications will be added to the archive</p>
+                            <p class="card-summary lang-ko-only">추가 방어 구조가 아카이브에 추가될 예정입니다</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="lang-en-only">&copy; 2025 Strategic Wisdom Archive | Exploring the Logic of Defense, Protection, and Peace</p>
+            <p class="lang-ko-only">&copy; 2025 전략적 지혜 아카이브 | 방어, 보호, 평화의 논리 탐구</p>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const savedLang = localStorage.getItem('language') || 'en';
+            document.body.setAttribute('data-lang', savedLang);
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const langToggle = document.getElementById('langToggle');
+                if (!langToggle) return;
+
+                const langOptions = document.querySelectorAll('.lang-option');
+
+                function updateButtonState(lang) {
+                    langOptions.forEach(option => {
+                        option.classList.toggle('active', option.dataset.lang === lang);
+                    });
+                }
+
+                updateButtonState(savedLang);
+
+                langToggle.addEventListener('click', function() {
+                    const currentLang = document.body.getAttribute('data-lang') || 'en';
+                    const newLang = currentLang === 'en' ? 'ko' : 'en';
+
+                    document.body.setAttribute('data-lang', newLang);
+                    localStorage.setItem('language', newLang);
+                    updateButtonState(newLang);
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

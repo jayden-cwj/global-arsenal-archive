@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Great Wall of China - Strategic Wisdom Archive</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .preview-notice {
+            background: #f39c12;
+            color: #000;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .metric-bar {
+            width: 100%;
+            height: 24px;
+            background: #1a252f;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            border-radius: 12px;
+            transition: width 0.5s ease;
+        }
+
+        .metric-value {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ecf0f1;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .insight-highlight {
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            border-left: 4px solid #3498db;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .key-insight {
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .content-body {
+            background: #1a252f;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .content-body h1 {
+            color: #3498db;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-body h2 {
+            color: #ecf0f1;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-body p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .content-body ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-body li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body data-lang="en">
+    <div class="preview-notice">
+        📋 STATIC PREVIEW - Great Wall Fortification Detail Page
+    </div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <h1><a href="preview-index.html">
+                    <span class="lang-en-only">Strategic Wisdom Archive</span>
+                    <span class="lang-ko-only">전략적 지혜 아카이브</span>
+                </a></h1>
+                <button id="langToggle" class="lang-toggle">
+                    <span class="lang-option active" data-lang="en">EN</span>
+                    <span class="lang-separator">|</span>
+                    <span class="lang-option" data-lang="ko">KO</span>
+                </button>
+            </div>
+            <nav>
+                <a href="preview-index.html"><span class="lang-en-only">Home</span><span class="lang-ko-only">홈</span></a>
+                <a href="preview-fortifications.html"><span class="lang-en-only">Fortifications</span><span class="lang-ko-only">방어 구조</span></a>
+                <a href="#"><span class="lang-en-only">Strategies</span><span class="lang-ko-only">전략</span></a>
+                <a href="preview-simulator.html"><span class="lang-en-only">Simulator</span><span class="lang-ko-only">시뮬레이터</span></a>
+                <a href="#"><span class="lang-en-only">Map</span><span class="lang-ko-only">지도</span></a>
+                <a href="#"><span class="lang-en-only">Insights</span><span class="lang-ko-only">인사이트</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="fortification-detail container">
+            <div class="header-section">
+                <div style="width: 100%; height: 400px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; border-radius: 12px; margin-bottom: 2rem;">
+                    <span style="font-size: 10rem;">🏰</span>
+                </div>
+                <div class="title-section">
+                    <h1 class="title-en lang-en-only">The Great Wall of China</h1>
+                    <h2 class="title-ko lang-ko-only">만리장성</h2>
+                    <p class="summary-en lang-en-only">A series of fortifications built to protect Chinese states from invasions, demonstrating strategic defense through communication networks and terrain advantage</p>
+                    <p class="summary-ko lang-ko-only">중국을 침략으로부터 보호하기 위해 건설된 일련의 요새로, 통신 네트워크와 지형 우위를 통한 전략적 방어를 보여줍니다</p>
+                </div>
+            </div>
+
+            <div class="data-grid">
+                <div class="info-section">
+                    <h3 class="lang-en-only">Location</h3>
+                    <h3 class="lang-ko-only">위치</h3>
+                    <table class="info-table">
+                        <tr>
+                            <th class="lang-en-only">Region</th>
+                            <th class="lang-ko-only">지역</th>
+                            <td class="lang-en-only">Northern China</td>
+                            <td class="lang-ko-only">중국 북부</td>
+                        </tr>
+                        <tr>
+                            <th class="lang-en-only">Coordinates</th>
+                            <th class="lang-ko-only">좌표</th>
+                            <td>40.4319, 116.5704</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="info-section">
+                    <h3 class="lang-en-only">Strategic Metrics</h3>
+                    <h3 class="lang-ko-only">전략 지표</h3>
+                    <table class="info-table">
+                        <tr>
+                            <th class="lang-en-only">Deterrence Level</th>
+                            <th class="lang-ko-only">억지력</th>
+                            <td>
+                                <div class="metric-bar">
+                                    <div class="metric-fill" style="width: 95%"></div>
+                                    <span class="metric-value">95/100</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="lang-en-only">Communication Efficiency</th>
+                            <th class="lang-ko-only">통신 효율성</th>
+                            <td>
+                                <div class="metric-bar">
+                                    <div class="metric-fill" style="width: 85%"></div>
+                                    <span class="metric-value">85/100</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="lang-en-only">Defensive Durability</th>
+                            <th class="lang-ko-only">방어 내구성</th>
+                            <td>
+                                <div class="metric-bar">
+                                    <div class="metric-fill" style="width: 80%"></div>
+                                    <span class="metric-value">80/100</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="lang-en-only">Terrain Advantage</th>
+                            <th class="lang-ko-only">지형 이점</th>
+                            <td>
+                                <div class="metric-bar">
+                                    <div class="metric-fill" style="width: 90%"></div>
+                                    <span class="metric-value">90/100</span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="info-section">
+                    <h3 class="lang-en-only">Historical Context</h3>
+                    <h3 class="lang-ko-only">역사적 배경</h3>
+                    <table class="info-table">
+                        <tr>
+                            <th class="lang-en-only">Period</th>
+                            <th class="lang-ko-only">시대</th>
+                            <td class="lang-en-only">7th century BC - 1644 AD</td>
+                            <td class="lang-ko-only">기원전 7세기 - 1644년</td>
+                        </tr>
+                        <tr>
+                            <th class="lang-en-only">Built By</th>
+                            <th class="lang-ko-only">건설자</th>
+                            <td class="lang-en-only">Various Chinese dynasties (Qin, Han, Ming)</td>
+                            <td class="lang-ko-only">다양한 중국 왕조 (진, 한, 명)</td>
+                        </tr>
+                        <tr>
+                            <th class="lang-en-only">Total Length</th>
+                            <th class="lang-ko-only">전체 길이</th>
+                            <td>21,196 km (13,171 miles)</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="info-section insight-highlight">
+                    <h3 class="lang-en-only">Key Insight</h3>
+                    <h3 class="lang-ko-only">핵심 통찰</h3>
+                    <p class="key-insight lang-en-only">The Great Wall's true strength wasn't the physical barrier, but the information network created by its beacon tower system - enabling communication across 750 km in just a few hours. This parallels modern cybersecurity, where early detection and rapid response matter more than perimeter defenses alone.</p>
+                    <p class="key-insight lang-ko-only">만리장성의 진정한 강점은 물리적 장벽이 아니라 봉화 시스템으로 만들어진 정보 네트워크였습니다. 단 몇 시간 만에 750km에 걸쳐 통신이 가능했습니다. 이는 경계 방어만으로는 충분하지 않고 조기 탐지와 빠른 대응이 더 중요한 현대 사이버 보안과 유사합니다.</p>
+                </div>
+            </div>
+
+            <div class="content-body">
+                <h1>The Great Wall: Architecture of Protection</h1>
+                <p>The Great Wall of China represents one of humanity's most ambitious defense projects, demonstrating that effective security extends far beyond physical barriers to encompass information networks, strategic planning, and sustainable resource management.</p>
+
+                <h2>The Logic of Defense</h2>
+                <p>Rather than a single continuous wall, the Great Wall was a sophisticated defense system comprising:</p>
+                <ul>
+                    <li><strong>Watchtowers</strong> spaced at regular intervals for visual surveillance</li>
+                    <li><strong>Beacon towers</strong> for rapid signal transmission using smoke (day) and fire (night)</li>
+                    <li><strong>Garrison fortresses</strong> housing troops and supplies</li>
+                    <li><strong>Mountain passes</strong> fortified to control strategic routes</li>
+                </ul>
+
+                <h2>Modern Parallels</h2>
+                <p>Today's cybersecurity architectures mirror the Great Wall's principles:</p>
+                <ul>
+                    <li><strong>Firewalls</strong> (physical barriers)</li>
+                    <li><strong>Intrusion Detection Systems</strong> (watchtowers)</li>
+                    <li><strong>Incident Response Teams</strong> (garrison forces)</li>
+                    <li><strong>Security Information and Event Management</strong> (beacon network)</li>
+                </ul>
+            </div>
+
+            <div class="back-link">
+                <a href="preview-fortifications.html">&larr; <span class="lang-en-only">Back to Fortifications</span><span class="lang-ko-only">방어 구조로 돌아가기</span></a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="lang-en-only">&copy; 2025 Strategic Wisdom Archive | Exploring the Logic of Defense, Protection, and Peace</p>
+            <p class="lang-ko-only">&copy; 2025 전략적 지혜 아카이브 | 방어, 보호, 평화의 논리 탐구</p>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const savedLang = localStorage.getItem('language') || 'en';
+            document.body.setAttribute('data-lang', savedLang);
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const langToggle = document.getElementById('langToggle');
+                if (!langToggle) return;
+
+                const langOptions = document.querySelectorAll('.lang-option');
+
+                function updateButtonState(lang) {
+                    langOptions.forEach(option => {
+                        option.classList.toggle('active', option.dataset.lang === lang);
+                    });
+                }
+
+                updateButtonState(savedLang);
+
+                langToggle.addEventListener('click', function() {
+                    const currentLang = document.body.getAttribute('data-lang') || 'en';
+                    const newLang = currentLang === 'en' ? 'ko' : 'en';
+
+                    document.body.setAttribute('data-lang', newLang);
+                    localStorage.setItem('language', newLang);
+                    updateButtonState(newLang);
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
