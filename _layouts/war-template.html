@@ -1,0 +1,398 @@
+---
+layout: default
+---
+<div class="war-detail container">
+    <div class="header-section">
+        <div class="title-section">
+            <h1 class="title-en lang-en-only">{{ page.title_en }}</h1>
+            <h2 class="title-ko lang-ko-only">{{ page.title_ko }}</h2>
+            <p class="summary-en lang-en-only">{{ page.summary_en }}</p>
+            <p class="summary-ko lang-ko-only">{{ page.summary_ko }}</p>
+        </div>
+    </div>
+
+    <div class="data-grid">
+        <!-- War Information -->
+        {% if page.war_info %}
+        <div class="info-section">
+            <h3 class="lang-en-only">War Information</h3>
+            <h3 class="lang-ko-only">전쟁 정보</h3>
+            <table class="info-table">
+                {% if page.war_info.period_en %}
+                <tr>
+                    <th class="lang-en-only">Period</th>
+                    <th class="lang-ko-only">기간</th>
+                    <td class="lang-en-only">{{ page.war_info.period_en }}</td>
+                    <td class="lang-ko-only">{{ page.war_info.period_ko }}</td>
+                </tr>
+                {% endif %}
+                {% if page.war_info.location_en %}
+                <tr>
+                    <th class="lang-en-only">Location</th>
+                    <th class="lang-ko-only">장소</th>
+                    <td class="lang-en-only">{{ page.war_info.location_en }}</td>
+                    <td class="lang-ko-only">{{ page.war_info.location_ko }}</td>
+                </tr>
+                {% endif %}
+                {% if page.war_info.result_en %}
+                <tr>
+                    <th class="lang-en-only">Result</th>
+                    <th class="lang-ko-only">결과</th>
+                    <td class="lang-en-only">{{ page.war_info.result_en }}</td>
+                    <td class="lang-ko-only">{{ page.war_info.result_ko }}</td>
+                </tr>
+                {% endif %}
+            </table>
+        </div>
+        {% endif %}
+
+        <!-- Participants -->
+        {% if page.participants %}
+        <div class="info-section participants-section">
+            <h3 class="lang-en-only">Participants</h3>
+            <h3 class="lang-ko-only">참전국</h3>
+            <div class="participants-grid">
+                {% for side in page.participants %}
+                <div class="participant-side">
+                    <h4 class="side-label">
+                        <span class="lang-en-only">{{ side.side_en }}</span>
+                        <span class="lang-ko-only">{{ side.side_ko }}</span>
+                    </h4>
+                    <ul>
+                        {% for nation in side.nations %}
+                        <li>
+                            <span class="lang-en-only">{{ nation.name_en }}</span>
+                            <span class="lang-ko-only">{{ nation.name_ko }}</span>
+                            {% if nation.leader_en %}
+                            <br><em class="lang-en-only">Led by: {{ nation.leader_en }}</em>
+                            <em class="lang-ko-only">지휘: {{ nation.leader_ko }}</em>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Defensive Structures Used -->
+        {% if page.defensive_structures %}
+        <div class="info-section structures-used-section">
+            <h3 class="lang-en-only">Defensive Structures Utilized</h3>
+            <h3 class="lang-ko-only">활용된 방어 구조</h3>
+            <p class="section-description lang-en-only">Fortifications that played key roles in this conflict:</p>
+            <p class="section-description lang-ko-only">이 분쟁에서 핵심 역할을 한 요새들:</p>
+            <div class="structures-grid">
+                {% for structure in page.defensive_structures %}
+                <div class="structure-card">
+                    <h4>
+                        <a href="{{ structure.url | relative_url }}">
+                            <span class="lang-en-only">{{ structure.name_en }}</span>
+                            <span class="lang-ko-only">{{ structure.name_ko }}</span>
+                        </a>
+                    </h4>
+                    <p class="lang-en-only">{{ structure.role_en }}</p>
+                    <p class="lang-ko-only">{{ structure.role_ko }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Strategies Employed -->
+        {% if page.strategies_employed %}
+        <div class="info-section strategies-used-section">
+            <h3 class="lang-en-only">Strategic Systems Employed</h3>
+            <h3 class="lang-ko-only">활용된 전략 시스템</h3>
+            <p class="section-description lang-en-only">Defensive strategies and tactics used during this war:</p>
+            <p class="section-description lang-ko-only">이 전쟁 중 사용된 방어 전략과 전술:</p>
+            <div class="strategies-grid">
+                {% for strategy in page.strategies_employed %}
+                <div class="strategy-card">
+                    <h4>
+                        {% if strategy.url %}
+                        <a href="{{ strategy.url | relative_url }}">
+                            <span class="lang-en-only">{{ strategy.name_en }}</span>
+                            <span class="lang-ko-only">{{ strategy.name_ko }}</span>
+                        </a>
+                        {% else %}
+                        <span class="lang-en-only">{{ strategy.name_en }}</span>
+                        <span class="lang-ko-only">{{ strategy.name_ko }}</span>
+                        {% endif %}
+                    </h4>
+                    <p class="lang-en-only">{{ strategy.description_en }}</p>
+                    <p class="lang-ko-only">{{ strategy.description_ko }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Major Battles/Sieges -->
+        {% if page.major_battles %}
+        <div class="info-section battles-section">
+            <h3 class="lang-en-only">Major Battles & Sieges</h3>
+            <h3 class="lang-ko-only">주요 전투 및 포위전</h3>
+            {% for battle in page.major_battles %}
+            <div class="battle-entry">
+                <h4 class="battle-name">
+                    <span class="lang-en-only">{{ battle.name_en }}</span>
+                    <span class="lang-ko-only">{{ battle.name_ko }}</span>
+                    <span class="battle-date">({{ battle.date }})</span>
+                </h4>
+                <table class="info-table">
+                    {% if battle.location_en %}
+                    <tr>
+                        <th class="lang-en-only">Location</th>
+                        <th class="lang-ko-only">장소</th>
+                        <td class="lang-en-only">{{ battle.location_en }}</td>
+                        <td class="lang-ko-only">{{ battle.location_ko }}</td>
+                    </tr>
+                    {% endif %}
+                    {% if battle.result_en %}
+                    <tr>
+                        <th class="lang-en-only">Result</th>
+                        <th class="lang-ko-only">결과</th>
+                        <td class="lang-en-only">{{ battle.result_en }}</td>
+                        <td class="lang-ko-only">{{ battle.result_ko }}</td>
+                    </tr>
+                    {% endif %}
+                    {% if battle.significance_en %}
+                    <tr>
+                        <th class="lang-en-only">Significance</th>
+                        <th class="lang-ko-only">의의</th>
+                        <td class="lang-en-only">{{ battle.significance_en }}</td>
+                        <td class="lang-ko-only">{{ battle.significance_ko }}</td>
+                    </tr>
+                    {% endif %}
+                </table>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Casualties/Impact -->
+        {% if page.casualties %}
+        <div class="info-section">
+            <h3 class="lang-en-only">Casualties & Impact</h3>
+            <h3 class="lang-ko-only">사상자 및 영향</h3>
+            <table class="info-table">
+                {% for side in page.casualties %}
+                <tr>
+                    <th class="lang-en-only">{{ side.side_en }}</th>
+                    <th class="lang-ko-only">{{ side.side_ko }}</th>
+                    <td>
+                        <span class="lang-en-only">{{ side.casualties_en }}</span>
+                        <span class="lang-ko-only">{{ side.casualties_ko }}</span>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% endif %}
+
+        <!-- Strategic Significance -->
+        {% if page.strategic_significance_en %}
+        <div class="info-section significance-highlight">
+            <h3 class="lang-en-only">Strategic Significance</h3>
+            <h3 class="lang-ko-only">전략적 의의</h3>
+            <p class="significance-text lang-en-only">{{ page.strategic_significance_en }}</p>
+            <p class="significance-text lang-ko-only">{{ page.strategic_significance_ko }}</p>
+        </div>
+        {% endif %}
+
+        <!-- Modern Relevance -->
+        {% if page.modern_relevance_en %}
+        <div class="info-section">
+            <h3 class="lang-en-only">Modern Relevance</h3>
+            <h3 class="lang-ko-only">현대적 관련성</h3>
+            <ul class="applications-list lang-en-only">
+                {% for item in page.modern_relevance_en %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+            <ul class="applications-list lang-ko-only">
+                {% for item in page.modern_relevance_ko %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Main Content (Markdown Body) -->
+    <div class="content-body">
+        {{ content }}
+    </div>
+
+    <div class="back-link">
+        <a href="{{ '/military-history/' | relative_url }}">&larr; <span class="lang-en-only">Back to Military History</span><span class="lang-ko-only">군사 역사로 돌아가기</span></a>
+    </div>
+</div>
+
+<style>
+/* War-specific styles */
+.war-detail {
+    background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto;
+    border: 2px solid #34495e;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.participants-section .participants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.participant-side {
+    background: rgba(26, 37, 47, 0.4);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #34495e;
+}
+
+.side-label {
+    color: #5dade2;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #34495e;
+}
+
+.participant-side ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.participant-side li {
+    padding: 0.75rem 0;
+    color: #ecf0f1;
+    border-bottom: 1px solid #34495e;
+}
+
+.participant-side li:last-child {
+    border-bottom: none;
+}
+
+/* Structures and Strategies Used */
+.structures-used-section,
+.strategies-used-section {
+    background: linear-gradient(135deg, #3498db15, #2980b915);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border-left: 4px solid #3498db;
+}
+
+.structures-grid,
+.strategies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.structure-card,
+.strategy-card {
+    background: rgba(26, 37, 47, 0.6);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #34495e;
+    transition: all 0.3s ease;
+}
+
+.structure-card:hover,
+.strategy-card:hover {
+    border-color: #3498db;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(52, 152, 219, 0.3);
+}
+
+.structure-card h4,
+.strategy-card h4 {
+    color: #3498db;
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.structure-card h4 a,
+.strategy-card h4 a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.structure-card h4 a:hover,
+.strategy-card h4 a:hover {
+    color: #5dade2;
+}
+
+.structure-card p,
+.strategy-card p {
+    color: #bdc3c7;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Battles Section */
+.battles-section {
+    background: linear-gradient(135deg, #e74c3c15, #c0392b15);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border-left: 4px solid #e74c3c;
+}
+
+.battle-entry {
+    background: rgba(26, 37, 47, 0.4);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border: 1px solid #34495e;
+}
+
+.battle-entry:last-child {
+    margin-bottom: 0;
+}
+
+.battle-name {
+    color: #e74c3c;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #34495e;
+}
+
+.battle-date {
+    color: #95a5a6;
+    font-size: 0.95rem;
+    font-weight: normal;
+}
+
+/* Significance Highlight */
+.significance-highlight {
+    background: linear-gradient(135deg, #f39c1215, #e67e2215);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    border-left: 4px solid #f39c12;
+}
+
+.significance-text {
+    color: #ecf0f1;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.section-description {
+    color: #bdc3c7;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+</style>

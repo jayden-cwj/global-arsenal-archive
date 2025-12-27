@@ -6,6 +6,9 @@ url: "https://jayden-cwj.github.io"
 
 # Collections Configuration
 collections:
+  wars:
+    output: true
+    permalink: /wars/:name/
   fortifications:
     output: true
     permalink: /fortifications/:name/
@@ -18,6 +21,11 @@ collections:
 
 # Default settings for collections
 defaults:
+  - scope:
+      path: ""
+      type: "wars"
+    values:
+      layout: "war-template"
   - scope:
       path: ""
       type: "fortifications"
