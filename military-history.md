@@ -6,17 +6,7 @@ permalink: /military-history/
 
 <div class="military-history-page container">
     <!-- Page Header -->
-    <div class="page-header">
-        <h1 class="lang-en-only">Military History Archive</h1>
-        <h1 class="lang-ko-only">군사 역사 아카이브</h1>
-        <p class="page-subtitle lang-en-only">
-            A comprehensive collection of defensive structures and strategic systems throughout human history
-        </p>
-        <p class="page-subtitle lang-ko-only">
-            인류 역사 전반에 걸친 방어 구조물과 전략 시스템의 종합 컬렉션
-        </p>
-    </div>
-
+    
     <!-- Introduction -->
     <!-- Era-Based Organization -->
     <div class="historical-timeline">

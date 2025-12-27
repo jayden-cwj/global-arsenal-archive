@@ -6,12 +6,6 @@ permalink: /fortifications/
 ---
 
 <div class="dashboard container">
-    <div class="dashboard-header">
-        <h1 class="lang-en-only">Fortifications</h1>
-        <h1 class="lang-ko-only">방어 구조</h1>
-        <p class="subtitle lang-en-only">Architectural systems of protection throughout human history</p>
-        <p class="subtitle lang-ko-only">인류 역사 전반에 걸친 보호의 건축 시스템</p>
-    </div>
 
     <div class="collection-filters">
         <div class="filter-group">
@@ -26,6 +20,21 @@ permalink: /fortifications/
                 <option value="future" data-en="Future Concepts" data-ko="미래 개념">Future / 미래</option>
                 <option value="scifi" data-en="Science Fiction" data-ko="공상 과학">Sci-Fi / SF</option>
                 <option value="fantasy" data-en="Fantasy" data-ko="판타지">Fantasy / 판타지</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label class="lang-en-only">War History:</label>
+            <label class="lang-ko-only">전쟁 역사:</label>
+            <select id="war-filter" class="filter-select">
+                <option value="all" data-en="All Wars" data-ko="모든 전쟁">All Wars / 모든 전쟁</option>
+                {% assign sorted_wars = site.wars | sort: 'year' %}
+                {% for war in sorted_wars %}
+                <option value="{{ war.url | relative_url }}" data-en="{{ war.title_en }}" data-ko="{{ war.title_ko }}">
+                    <span class="lang-en-only">{{ war.title_en }}</span>
+                    <span class="lang-ko-only">{{ war.title_ko }}</span>
+                </option>
+                {% endfor %}
             </select>
         </div>
 
@@ -46,44 +55,6 @@ permalink: /fortifications/
             <span id="count-display-ko" class="lang-ko-only">모든 항목 표시</span>
         </div>
     </div>
-
-    <!-- Wars List Section -->
-    {% if site.wars.size > 0 %}
-    <div class="wars-reference-section">
-        <h3 class="lang-en-only">📜 Related Wars & Conflicts</h3>
-        <h3 class="lang-ko-only">📜 관련 전쟁 및 분쟁</h3>
-        <p class="section-description lang-en-only">Explore wars that utilized these defensive structures:</p>
-        <p class="section-description lang-ko-only">이러한 방어 구조물을 활용한 전쟁 탐색:</p>
-        <div class="wars-list">
-            {% assign sorted_wars = site.wars | sort: 'year' %}
-            {% for war in sorted_wars %}
-            <a href="{{ war.url | relative_url }}" class="war-reference-card">
-                <div class="war-era-badge">
-                    {% if war.era == "ancient" %}🏛️ Ancient
-                    {% elsif war.era == "medieval" %}🏰 Medieval
-                    {% elsif war.era == "modern" %}⚔️ Modern
-                    {% elsif war.era == "contemporary" %}🛡️ Contemporary
-                    {% endif %}
-                </div>
-                <h4>
-                    <span class="lang-en-only">{{ war.title_en }}</span>
-                    <span class="lang-ko-only">{{ war.title_ko }}</span>
-                </h4>
-                <p class="war-period">
-                    <span class="lang-en-only">{{ war.war_info.period_en }}</span>
-                    <span class="lang-ko-only">{{ war.war_info.period_ko }}</span>
-                </p>
-                <p class="war-structures-count lang-en-only">
-                    {{ war.defensive_structures.size }} fortifications used
-                </p>
-                <p class="war-structures-count lang-ko-only">
-                    {{ war.defensive_structures.size }}개 요새 활용
-                </p>
-            </a>
-            {% endfor %}
-        </div>
-    </div>
-    {% endif %}
 
     <section class="collection-section">
         <div class="grid-container" id="fortifications-grid">
@@ -139,8 +110,17 @@ permalink: /fortifications/
 document.addEventListener('DOMContentLoaded', function() {
     const grid = document.getElementById('fortifications-grid');
     const eraFilter = document.getElementById('era-filter');
+    const warFilter = document.getElementById('war-filter');
     const sortSelect = document.getElementById('sort-select');
     const cards = Array.from(grid.querySelectorAll('.item-card'));
+
+    // War filter navigation
+    warFilter.addEventListener('change', function() {
+        const selectedWar = this.value;
+        if (selectedWar !== 'all') {
+            window.location.href = selectedWar;
+        }
+    });
 
     function filterAndSort() {
         const selectedEra = eraFilter.value;
@@ -299,90 +279,6 @@ document.addEventListener('DOMContentLoaded', function() {
     .results-count {
         margin-left: 0;
         text-align: center;
-    }
-}
-
-/* Wars Reference Section */
-.wars-reference-section {
-    background: linear-gradient(135deg, #e74c3c15, #c0392b15);
-    padding: 2rem;
-    border-radius: 12px;
-    margin-bottom: 2rem;
-    border-left: 4px solid #e74c3c;
-}
-
-.wars-reference-section h3 {
-    color: #e74c3c;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.wars-reference-section .section-description {
-    color: #7f8c8d;
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-    font-style: italic;
-}
-
-.wars-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-
-.war-reference-card {
-    background: white;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    border: 2px solid transparent;
-}
-
-.war-reference-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(231, 76, 60, 0.2);
-    border-color: #e74c3c;
-}
-
-.war-era-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-    color: white;
-    padding: 0.4rem 0.8rem;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-}
-
-.war-reference-card h4 {
-    color: #2c3e50;
-    font-size: 1.2rem;
-    margin-bottom: 0.75rem;
-    line-height: 1.4;
-}
-
-.war-period {
-    color: #7f8c8d;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-}
-
-.war-structures-count {
-    color: #95a5a6;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-top: 0.75rem;
-}
-
-@media (max-width: 768px) {
-    .wars-list {
-        grid-template-columns: 1fr;
     }
 }
 </style>

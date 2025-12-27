@@ -6,12 +6,6 @@ permalink: /strategies/
 ---
 
 <div class="dashboard container">
-    <div class="dashboard-header">
-        <h1 class="lang-en-only">Strategic Systems</h1>
-        <h1 class="lang-ko-only">전략 시스템</h1>
-        <p class="subtitle lang-en-only">Historical defensive strategies and tactical innovations</p>
-        <p class="subtitle lang-ko-only">역사적 방어 전략 및 전술적 혁신</p>
-    </div>
 
     <div class="collection-filters">
         <div class="filter-group">

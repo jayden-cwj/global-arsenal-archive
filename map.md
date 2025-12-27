@@ -6,18 +6,6 @@ permalink: /map/
 ---
 
 <div class="map-container">
-    <div class="map-header">
-        <h1 class="lang-en-only">Global Defense Map</h1>
-        <h1 class="lang-ko-only">글로벌 방어 지도</h1>
-        <p class="lang-en-only">
-            Explore the geographical distribution of humanity's greatest defensive systems.
-            Each marker reveals the strategic wisdom embedded in location, terrain, and architecture.
-        </p>
-        <p class="lang-ko-only">
-            인류의 가장 위대한 방어 시스템의 지리적 분포를 탐색하세요.
-            각 마커는 위치, 지형, 건축에 내장된 전략적 지혜를 보여줍니다.
-        </p>
-    </div>
 
     <div class="map-controls">
         <div class="filter-group">

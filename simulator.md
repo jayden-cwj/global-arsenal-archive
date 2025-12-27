@@ -6,12 +6,6 @@ permalink: /simulator/
 ---
 
 <div class="simulator-container">
-    <div class="simulator-header">
-        <h1 class="lang-en-only">Strategic Logic Simulator</h1>
-        <h1 class="lang-ko-only">전략 논리 시뮬레이터</h1>
-        <p class="lang-en-only">Test defensive strategies by adjusting key metrics to see their impact on overall survival probability</p>
-        <p class="lang-ko-only">주요 지표를 조정하여 전체 생존 확률에 미치는 영향을 확인하여 방어 전략을 테스트하세요</p>
-    </div>
 
     <div class="simulator-body">
         <div class="simulator-controls">
