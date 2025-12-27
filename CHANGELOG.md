@@ -1,5 +1,93 @@
 # Strategic Wisdom Archive - Changelog
 
+## Version 0.0.5 - Goguryeo Defense System (December 27, 2024)
+
+### 🏰 New Content: Five Goguryeo Fortresses
+
+**Purpose:** Document Korea's ancient defensive wisdom through Goguryeo's fortress network that defended against Sui and Tang Dynasty invasions.
+
+**Historical Context:**
+Added comprehensive coverage of Goguryeo's sophisticated defense system that successfully resisted Chinese invasions from the 6th-7th centuries CE. These fortresses demonstrate strategic depth, networked defense, and the power of integrated military systems.
+
+**New Fortifications Added:**
+
+1. **Ansi Fortress (안시성)** - The legendary stronghold that withstood Emperor Taizong's 150,000-strong Tang army for 3 months in 645 CE, forcing one of history's greatest emperors to retreat.
+
+2. **Bisa Fortress (비사성 / Great Black Mountain Fortress)** - An impregnable natural fortress surrounded by cliffs on three sides with only a single western gate, demonstrating the power of terrain selection.
+
+3. **Cheonli Jangseong (천리장성 / Thousand Li Wall)** - Goguryeo's answer to China's Great Wall, a 480-500 km defensive system built over 16 years (631-647 CE) to create strategic depth against Tang invasion.
+
+4. **Baekam Fortress (백암성)** - A mountain strongpoint integrated into the Cheonli Jangseong network, showing the value of coordinated defensive systems.
+
+5. **Jeokri Fortress (적리성)** - A forward outpost specializing in early warning and intelligence gathering, proving that information can be more valuable than walls.
+
+**Strategic Themes:**
+- **Defense in Depth**: Multiple layers preventing catastrophic breakthroughs
+- **Network Effects**: Fortresses supporting each other as integrated systems
+- **Intelligence Warfare**: Early warning and rapid communication across hundreds of kilometers
+- **Asymmetric Defense**: Small forces defeating larger armies through positioning and strategy
+- **Long-term Planning**: 16-year construction projects requiring sustained national commitment
+
+**Data Schema Features:**
+- Complete attribution (who built it, who commissioned it)
+- Historical siege information (commanders, outcomes, strategic notes)
+- Special attributes (legendary sieges, impregnable defenses, network components)
+- Modern applications (cybersecurity, business strategy, military doctrine)
+- Strategic lessons (terrain advantage, resource optimization, communication networks)
+
+---
+
+### 📁 Files Modified
+
+**New Files Created:**
+- `_fortifications/ansi-fortress/ansi-fortress.md` - 300+ lines, comprehensive siege analysis
+- `_fortifications/bisa-fortress/bisa-fortress.md` - 200+ lines, natural fortress design
+- `_fortifications/cheonli-jangseong/cheonli-jangseong.md` - 350+ lines, mega-project analysis
+- `_fortifications/baekam-fortress/baekam-fortress.md` - 200+ lines, network integration
+- `_fortifications/jeokri-fortress/jeokri-fortress.md` - 250+ lines, intelligence warfare
+
+**Language Setting:**
+- Confirmed English as default language (already set in `_layouts/default.html`)
+
+---
+
+### 📊 Statistics
+
+**New Content:**
+- 5 new fortification entries
+- 1,300+ lines of historical content
+- Medieval era (6th-7th century CE) entries
+- Integrated into Military History timeline
+- Complete bilingual support (EN/KO)
+
+**Coverage Expansion:**
+- Added Korean Peninsula defensive systems
+- Documented Goguryeo-Tang Wars (645 CE)
+- Included Sui Dynasty invasion responses (612 CE)
+- Connected to broader East Asian military history
+
+**Educational Value:**
+- Case studies in asymmetric warfare
+- Network defense principles
+- Strategic foresight and planning
+- Information warfare fundamentals
+- Terrain and resource optimization
+
+---
+
+### 🎓 Historical Significance
+
+These fortresses represent:
+- **Ansi**: How determination and leadership can overcome numerical superiority
+- **Bisa**: The power of choosing the right defensive position
+- **Cheonli Jangseong**: National commitment to long-term security projects
+- **Baekam**: Integration multiplying individual effectiveness
+- **Jeokri**: Intelligence as a force multiplier in defense
+
+Together, they form a case study in comprehensive national defense strategy that remains relevant 1,400 years later.
+
+---
+
 ## Version 0.0.4 - Era Time Filter (December 27, 2024)
 
 ### 🕐 New Feature: Historical Era Filter
@@ -436,5 +524,5 @@ Beyond numeric metrics, entries can now have qualitative tags for unique charact
 
 ---
 
-*Strategic Wisdom Archive v0.0.4*
+*Strategic Wisdom Archive v0.0.5*
 *"From Destruction to Protection, From Arsenal to Architecture"*
